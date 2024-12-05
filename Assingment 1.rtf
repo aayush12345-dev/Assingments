@@ -1,0 +1,1480 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Comic Sans MS;}{\f1\fnil\fcharset0 Calibri;}}
+{\*\generator Riched20 10.0.19041}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\qc\b\f0\fs32\lang9 ASSINGMENT=1\par
+\b0\fs24\par
+
+\pard\ri-23\sa200\sl276\slmult1\qc\par
+
+\pard\sa200\sl276\slmult1\b Q.1 . Write a Java program to change temperature from Celsius to Fahrenheit and vice versa.\par
+
+\pard\sa200\sl276\slmult1\b0\fs20 import java.util.Scanner;\par
+public class TemperatureConverter \par
+\{\par
+    public static double celsiusToFahrenheit(double celsius) \{\par
+        return (celsius * 9/5) + 32;\par
+    \}\par
+    public static double fahrenheitToCelsius(double fahrenheit) \{\par
+        return (fahrenheit - 32) * 5/9;\par
+    \}\par
+    public static void main(String[] args)\par
+ \{\par
+        Scanner scanner = new Scanner(System.in);\par
+        System.out.println("Temperature Converter");\par
+        System.out.println("1. Celsius to Fahrenheit");\par
+        System.out.println("2. Fahrenheit to Celsius");\par
+        System.out.print("Enter your choice (1 or 2): ");\par
+        int choice = scanner.nextInt();\par
+\par
+        if (choice == 1)\par
+ \{\par
+            System.out.print("Enter temperature in Celsius: ");\par
+            double celsius = scanner.nextDouble();\par
+            double fahrenheit = celsiusToFahrenheit(celsius);\par
+            System.out.println(celsius + " Celsius = " + fahrenheit + " Fahrenheit");\par
+        \} \par
+else if (choice == 2)\par
+ \{\par
+            System.out.print("Enter temperature in Fahrenheit: ");\par
+            double fahrenheit = scanner.nextDouble();\par
+            double celsius = fahrenheitToCelsius(fahrenheit);\par
+            System.out.println(fahrenheit + " Fahrenheit = " + celsius + " Celsius");\par
+        \} \par
+ else \{\par
+            System.out.println("Invalid choice.");\par
+        \}\par
+             scanner.close();\par
+    \}\par
+\}\par
+\par
+\b\fs24 Q.2. Write a Java Program to check if a number is Positive or Negative.\b0\fs20\par
+import java.util.Scanner;\par
+public class PositiveNegativeChecker \{\par
+\par
+    public static void main(String[] args) \{\par
+        \par
+        Scanner scanner = new Scanner(System.in);\par
+        System.out.print("Enter a number: ");\par
+        double number = scanner.nextDouble();\par
+        if (number > 0) \{\par
+            System.out.println(number + " is a positive number.");\par
+        \} else if (number < 0) \{\par
+            System.out.println(number + " is a negative number.");\par
+        \} else \{\par
+            System.out.println("The number is zero.");\par
+        \}\par
+        scanner.close();\par
+    \}\par
+\}\par
+\par
+\b\fs24 Q.3. Write a Java program to find maximum of three numbers.\par
+\b0\fs20 import java.util.Scanner;\par
+\par
+public class MaxOfThreeNumbers \{\par
+\par
+    public static void main(String[] args) \{\par
+        Scanner scanner = new Scanner(System.in);\par
+        System.out.print("Enter the first number: ");\par
+        int num1 = scanner.nextInt();\par
+\par
+        System.out.print("Enter the second number: ");\par
+        int num2 = scanner.nextInt();\par
+\par
+        System.out.print("Enter the third number: ");\par
+        int num3 = scanner.nextInt();\par
+\par
+        \par
+        int max = num1;  \par
+\par
+        if (num2 > max) \{\par
+            max = num2\par
+        \}\par
+\par
+        if (num3 > max) \{\par
+            max = num3;  \par
+        \}\par
+        System.out.println("The maximum number is: " + max);\par
+        scanner.close();\par
+    \}\par
+\}\par
+\par
+\b\fs24 Q.4.  Write a Java program to swap two numbers.\par
+\b0\fs20 import java.util.Scanner;\par
+\par
+public class SwapTwoNumbers \{\par
+\par
+    public static void main(String[] args) \{\par
+        Scanner scanner = new Scanner(System.in);\par
+        System.out.print("Enter the first number: ");\par
+        int num1 = scanner.nextInt();\par
+\par
+        System.out.print("Enter the second number: ");\par
+        int num2 = scanner.nextInt();\par
+\par
+        \par
+        System.out.println("Before swapping: ");\par
+        System.out.println("First number = " + num1);\par
+        System.out.println("Second number = " + num2);\par
+        int temp = num1;\par
+        num1 = num2;\par
+        num2 = temp;\par
+        System.out.println("After swapping: ");\par
+        System.out.println("First number = " + num1);\par
+        System.out.println("Second number = " + num2);\par
+        scanner.close();\par
+    \}\par
+\}\par
+\par
+\b\fs24 Q.5. Write a Java program to convert miles to kilometers.\par
+\b0\fs20 import java.util.Scanner;\par
+\par
+public class MilesToKilometersConverter \{\par
+\par
+    public static void main(String[] args) \{\par
+        Scanner scanner = new Scanner(System.in);\par
+        System.out.print("Enter distance in miles: ");\par
+        double miles = scanner.nextDouble();\par
+\par
+        // Conversion factor: 1 mile = 1.60934 kilometers\par
+        double kilometers = miles * 1.60934;\par
+        System.out.println(miles + " miles is equal to " + kilometers + " kilometers.");\par
+        scanner.close();\par
+    \}\par
+\}\par
+\par
+\b\fs24 Q.6. Write a Java program to check whether a year is leap year or not.\par
+\b0\fs20 import java.util.Scanner;\par
+\par
+public class LeapYearChecker \{\par
+\par
+    public static void main(String[] args) \{\par
+        Scanner scanner = new Scanner(System.in);\par
+        System.out.print("Enter a year: ");\par
+        int year = scanner.nextInt();\par
+        if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) \{\par
+            System.out.println(year + " is a leap year.");\par
+        \} else \{\par
+            System.out.println(year + " is not a leap year.");\par
+        \}\par
+        scanner.close();\par
+    \}\par
+\}\par
+\par
+\b\fs24 Q.7. Write a Java program for following grading system.Note: \par
+Percentage>=90% : Grade A\par
+Percentage>=80% : Grade B\par
+Percentage>=70% : Grade C\par
+Percentage>=60% : Grade D\par
+Percentage>=40% : Grade E\par
+Percentage<40% : Grade F\par
+\b0\fs20 import java.util.Scanner;\par
+\par
+public class GradingSystem \{\par
+\par
+    public static void main(String[] args) \{\par
+        // Create a scanner object for input\par
+        Scanner scanner = new Scanner(System.in);\par
+\par
+        // Ask the user to enter the total marks and obtained marks\par
+        System.out.print("Enter total marks: ");\par
+        double totalMarks = scanner.nextDouble();\par
+\par
+        System.out.print("Enter obtained marks: ");\par
+        double obtainedMarks = scanner.nextDouble();\par
+\par
+        // Calculate the percentage\par
+        double percentage = (obtainedMarks / totalMarks) * 100;\par
+\par
+        // Display the percentage\par
+        System.out.println("Percentage: " + percentage + "%");\par
+\par
+        // Determine the grade based on the percentage\par
+        if (percentage >= 90) \{\par
+            System.out.println("Grade: A");\par
+        \} else if (percentage >= 80) \{\par
+            System.out.println("Grade: B");\par
+        \} else if (percentage >= 70) \{\par
+            System.out.println("Grade: C");\par
+        \} else if (percentage >= 60) \{\par
+            System.out.println("Grade: D");\par
+        \} else if (percentage >= 40) \{\par
+            System.out.println("Grade: E");\par
+        \} else \{\par
+            System.out.println("Grade: F");\par
+        \}\par
+\par
+        // Close the scanner to avoid resource leak\par
+        scanner.close();\par
+    \}\par
+\}\par
+\par
+\b\fs24 Q.8. Write a Java program to check whether a number is divisible by a number given by user.\par
+\b0\fs20 import java.util.Scanner;\par
+\par
+public class DivisibilityChecker \{\par
+\par
+    public static void main(String[] args) \{\par
+        // Create a scanner object for input\par
+        Scanner scanner = new Scanner(System.in);\par
+\par
+        // Ask the user to enter two numbers\par
+        System.out.print("Enter the first number: ");\par
+        int num1 = scanner.nextInt();\par
+\par
+        System.out.print("Enter the second number: ");\par
+        int num2 = scanner.nextInt();\par
+\par
+        // Check if the second number is divisible by the first number\par
+        if (num2 != 0) \{  // Ensure the second number is not zero to avoid division by zero\par
+            if (num2 % num1 == 0) \{\par
+                System.out.println(num2 + " is divisible by " + num1);\par
+            \} else \{\par
+                System.out.println(num2 + " is not divisible by " + num1);\par
+            \}\par
+        \} else \{\par
+            System.out.println("The second number cannot be zero for division.");\par
+        \}\par
+\par
+        // Close the scanner to avoid resource leak\par
+        scanner.close();\par
+    \}\par
+\}\par
+\par
+\b\fs24 Q.9. Write a Java program to calculate factorial of 12.\par
+\b0\fs20 public class FactorialCalculator \{\par
+    public static void main(String[] args) \{\par
+        int number = 12; // The number to calculate the factorial for\par
+        long factorial = calculateFactorial(number); // Factorial can grow large, so use long\par
+        System.out.println("The factorial of " + number + " is: " + factorial);\par
+    \}\par
+\par
+    /**\par
+     * Method to calculate the factorial of a given number.\par
+     * @param num The number to calculate factorial for.\par
+     * @return The factorial of the number.\par
+     */\par
+    public static long calculateFactorial(int num) \{\par
+        long result = 1;\par
+        for (int i = 1; i <= num; i++) \{\par
+            result *= i;\par
+        \}\par
+        return result;\par
+    \}\par
+\}\par
+\par
+\par
+\b\fs24 Q.10. Write a Java program for Fibonacci series.\par
+\b0\fs20\par
+ public class FactorialCalculator \{\par
+    public static void main(String[] args) \{\par
+        int number = 12; // The number to calculate the factorial for\par
+        long factorial = calculateFactorial(number); // Factorial can grow large, so use long\par
+        System.out.println("The factorial of " + number + " is: " + factorial);\par
+    \}\par
+\par
+    /**\par
+     * Method to calculate the factorial of a given number.\par
+     * @param num The number to calculate factorial for.\par
+     * @return The factorial of the number.\par
+     */\par
+    public static long calculateFactorial(int num) \{\par
+        long result = 1;\par
+        for (int i = 1; i <= num; i++) \{\par
+            result *= i;\par
+        \}\par
+        return result;\par
+    \}\par
+\}\par
+\par
+\b\fs24 Q.11 Write a Java program to reverse a number.\par
+\b0\fs20\par
+import java.util.Scanner;\par
+\par
+public class ReverseNumber \{\par
+    public static void main(String[] args) \{\par
+        Scanner scanner = new Scanner(System.in);\par
+\par
+        // Input: Prompt the user for a number\par
+        System.out.print("Enter a number to reverse: ");\par
+        int number = scanner.nextInt();\par
+\par
+        // Reverse the number\par
+        int reversedNumber = reverseNumber(number);\par
+\par
+        // Output: Display the reversed number\par
+        System.out.println("Reversed number: " + reversedNumber);\par
+    \}\par
+\par
+    /**\par
+     * Method to reverse the digits of a number.\par
+     * @param num The number to reverse.\par
+     * @return The reversed number.\par
+     */\par
+    public static int reverseNumber(int num) \{\par
+        int reversed = 0;\par
+        while (num != 0) \{\par
+            int digit = num % 10; // Extract the last digit\par
+            reversed = reversed * 10 + digit; // Build the reversed number\par
+            num /= 10; // Remove the last digit from the original number\par
+        \}\par
+        return reversed;\par
+    \}\par
+\}\par
+\par
+\b\fs24 Q.12. Admission to a professional course is subject to the following conditions:\par
+(a) marks in Mathematics >= 60\par
+(b) marks in Physics >=50\par
+(c) marks in Chemistry >=40\par
+(d) Total in all 3 subjects >=200\par
+(Or) Total in Maths & Physics>=150 Given the marks in the 3 subjects of n (user input)\par
+students, write a program to processthe applications to list the eligible candidates.\par
+\b0\fs20\par
+import java.util.Scanner;\par
+\par
+public class CourseAdmission \{\par
+    public static void main(String[] args) \{\par
+        Scanner scanner = new Scanner(System.in);\par
+\par
+        // Input: Number of students\par
+        System.out.print("Enter the number of students: ");\par
+        int n = scanner.nextInt();\par
+\par
+        // Array to store eligibility results\par
+        String[] eligibilityResults = new String[n];\par
+\par
+        for (int i = 0; i < n; i++) \{\par
+            // Input: Marks for each student\par
+            System.out.println("Enter marks for student " + (i + 1) + ":");\par
+            System.out.print("Mathematics: ");\par
+            int mathMarks = scanner.nextInt();\par
+            System.out.print("Physics: ");\par
+            int physicsMarks = scanner.nextInt();\par
+            System.out.print("Chemistry: ");\par
+            int chemistryMarks = scanner.nextInt();\par
+\par
+            // Check eligibility\par
+            boolean isEligible = checkEligibility(mathMarks, physicsMarks, chemistryMarks);\par
+\par
+            // Store eligibility result\par
+            eligibilityResults[i] = "Student " + (i + 1) + ": " + (isEligible ? "Eligible" : "Not Eligible");\par
+        \}\par
+\par
+        // Output: Display eligibility results\par
+        System.out.println("\\nEligibility Results:");\par
+        for (String result : eligibilityResults) \{\par
+            System.out.println(result);\par
+        \}\par
+    \}\par
+\par
+    /**\par
+     * Method to check if a student is eligible for admission.\par
+     * @param math Marks in Mathematics\par
+     * @param physics Marks in Physics\par
+     * @param chemistry Marks in Chemistry\par
+     * @return True if eligible, otherwise false\par
+     */\par
+    public static boolean checkEligibility(int math, int physics, int chemistry) \{\par
+        boolean condition1 = math >= 60;\par
+        boolean condition2 = physics >= 50;\par
+        boolean condition3 = chemistry >= 40;\par
+        boolean condition4 = (math + physics + chemistry) >= 200;\par
+        boolean condition5 = (math + physics) >= 150;\par
+\par
+        return condition1 && condition2 && condition3 && (condition4 || condition5);\par
+    \}\par
+\}\par
+\par
+\b\fs24 Q.13. Write a Java program to calculate the sum of natural numbers up to a certain range.\par
+\b0\fs20 import java.util.Scanner;\par
+\par
+public class SumOfNaturalNumbers \{\par
+    public static void main(String[] args) \{\par
+        Scanner scanner = new Scanner(System.in);\par
+\par
+        // Input: Prompt the user to enter the range\par
+        System.out.print("Enter the range (n): ");\par
+        int n = scanner.nextInt();\par
+\par
+        // Validate input\par
+        if (n < 1) \{\par
+            System.out.println("Please enter a positive number greater than or equal to 1.");\par
+        \} else \{\par
+            // Calculate the sum\par
+            int sum = calculateSum(n);\par
+\par
+            // Output: Display the sum\par
+            System.out.println("The sum of natural numbers up to " + n + " is: " + sum);\par
+        \}\par
+    \}\par
+\par
+    /**\par
+     * Method to calculate the sum of natural numbers up to a given range.\par
+     * @param n The range up to which to calculate the sum.\par
+     * @return The sum of natural numbers up to n.\par
+     */\par
+    public static int calculateSum(int n) \{\par
+        // Using the formula for the sum of the first n natural numbers: n * (n + 1) / 2\par
+        return n * (n + 1) / 2;\par
+    \}\par
+\}\par
+\b\fs24\par
+Q.14. Write a Java program to print all multiple of 10 between a given interval.\par
+\b0\fs20 import java.util.Scanner;\par
+\par
+public class MultiplesOfTen \{\par
+    public static void main(String[] args) \{\par
+        Scanner scanner = new Scanner(System.in);\par
+\par
+        // Input: Prompt the user for the interval\par
+        System.out.print("Enter the starting number of the interval: ");\par
+        int start = scanner.nextInt();\par
+        System.out.print("Enter the ending number of the interval: ");\par
+        int end = scanner.nextInt();\par
+\par
+        // Validate input\par
+        if (start > end) \{\par
+            System.out.println("Invalid interval! The starting number should be less than or equal to the ending number.");\par
+        \} else \{\par
+            System.out.println("Multiples of 10 between " + start + " and " + end + ":");\par
+            printMultiplesOfTen(start, end);\par
+        \}\par
+    \}\par
+\par
+    /**\par
+     * Method to print all multiples of 10 within a given interval.\par
+     * @param start The starting number of the interval.\par
+     * @param end The ending number of the interval.\par
+     */\par
+    public static void printMultiplesOfTen(int start, int end) \{\par
+        // Adjust start to the next multiple of 10 if it is not already a multiple\par
+        if (start % 10 != 0) \{\par
+            start += 10 - (start % 10);\par
+        \}\par
+\par
+        // Print multiples of 10\par
+        for (int i = start; i <= end; i += 10) \{\par
+            System.out.print(i + " ");\par
+        \}\par
+        System.out.println(); // For a clean line break\par
+    \}\par
+\}\par
+\par
+\b\fs24 Q.15. Write a Java program to generate multiplication table.\par
+\b0\fs20 import java.util.Scanner;\par
+\par
+public class MultiplicationTable \{\par
+    public static void main(String[] args) \{\par
+        Scanner scanner = new Scanner(System.in);\par
+\par
+        // Input: Prompt the user to enter the number for which to generate the table\par
+        System.out.print("Enter the number for the multiplication table: ");\par
+        int number = scanner.nextInt();\par
+\par
+        System.out.print("Enter the range for the multiplication table: ");\par
+        int range = scanner.nextInt();\par
+\par
+        // Output: Display the multiplication table\par
+        System.out.println("Multiplication Table for " + number + ":");\par
+        generateMultiplicationTable(number, range);\par
+    \}\par
+\par
+    /**\par
+     * Method to generate and print the multiplication table for a given number up to a specified range.\par
+     * @param number The number for which the table is to be generated.\par
+     * @param range The range up to which the table is to be generated.\par
+     */\par
+    public static void generateMultiplicationTable(int number, int range) \{\par
+        for (int i = 1; i <= range; i++) \{\par
+            System.out.println(number + " x " + i + " = " + (number * i));\par
+        \}\par
+    \}\par
+\}\par
+\par
+\b\fs24 Q.16.Write a Java program to find HCF of two Numbers.\par
+\b0\fs20 import java.util.Scanner;\par
+\par
+public class HCFCalculator \{\par
+    public static void main(String[] args) \{\par
+        Scanner scanner = new Scanner(System.in);\par
+\par
+        // Input: Prompt the user for two numbers\par
+        System.out.print("Enter the first number: ");\par
+        int num1 = scanner.nextInt();\par
+        System.out.print("Enter the second number: ");\par
+        int num2 = scanner.nextInt();\par
+\par
+        // Calculate HCF\par
+        int hcf = calculateHCF(num1, num2);\par
+\par
+        // Output: Display the HCF\par
+        System.out.println("The HCF of " + num1 + " and " + num2 + " is: " + hcf);\par
+    \}\par
+\par
+    /**\par
+     * Method to calculate the HCF of two numbers using the Euclidean algorithm.\par
+     * @param a First number.\par
+     * @param b Second number.\par
+     * @return The HCF of the two numbers.\par
+     */\par
+    public static int calculateHCF(int a, int b) \{\par
+        while (b != 0) \{\par
+            int temp = b;\par
+            b = a % b;\par
+            a = temp;\par
+        \}\par
+        return a;\par
+    \}\par
+\}\par
+\b\fs24\par
+Q.17. Write a Java program to find LCM of two Numbers.\par
+\b0\fs20 import java.util.Scanner;\par
+\par
+public class LCMCalculator \{\par
+    public static void main(String[] args) \{\par
+        Scanner scanner = new Scanner(System.in);\par
+\par
+        // Input: Prompt the user for two numbers\par
+        System.out.print("Enter the first number: ");\par
+        int num1 = scanner.nextInt();\par
+        System.out.print("Enter the second number: ");\par
+        int num2 = scanner.nextInt();\par
+\par
+        // Calculate LCM\par
+        int lcm = calculateLCM(num1, num2);\par
+\par
+        // Output: Display the LCM\par
+        System.out.println("The LCM of " + num1 + " and " + num2 + " is: " + lcm);\par
+    \}\par
+\par
+    /**\par
+     * Method to calculate the LCM of two numbers using the formula:\par
+     * LCM(a, b) = (a * b) / HCF(a, b)\par
+     * @param a First number.\par
+     * @param b Second number.\par
+     * @return The LCM of the two numbers.\par
+     */\par
+    public static int calculateLCM(int a, int b) \{\par
+        return (a * b) / calculateHCF(a, b);\par
+    \}\par
+\par
+    /**\par
+     * Method to calculate the HCF (Highest Common Factor) of two numbers using the Euclidean algorithm.\par
+     * @param a First number.\par
+     * @param b Second number.\par
+     * @return The HCF of the two numbers.\par
+     */\par
+    public static int calculateHCF(int a, int b) \{\par
+        while (b != 0) \{\par
+            int temp = b;\par
+            b = a % b;\par
+            a = temp;\par
+        \}\par
+        return a;\par
+    \}\par
+\}\par
+\par
+\b\fs24 Q.18. Write a Java program to count the number of digits of an integer.\par
+\b0\fs20 import java.util.Scanner;\par
+\par
+public class CountDigits \{\par
+    public static void main(String[] args) \{\par
+        Scanner scanner = new Scanner(System.in);\par
+\par
+        // Input: Prompt the user to enter an integer\par
+        System.out.print("Enter an integer: ");\par
+        int number = scanner.nextInt();\par
+\par
+        // Count the number of digits\par
+        int numberOfDigits = countDigits(number);\par
+\par
+        // Output: Display the number of digits\par
+        System.out.println("The number of digits in " + number + " is: " + numberOfDigits);\par
+    \}\par
+\par
+    /**\par
+     * Method to count the number of digits in an integer.\par
+     * @param num The integer whose digits are to be counted.\par
+     * @return The count of digits in the integer.\par
+     */\par
+    public static int countDigits(int num) \{\par
+        // Handle the case for zero\par
+        if (num == 0) \{\par
+            return 1;\par
+        \}\par
+\par
+        int count = 0;\par
+\par
+        // If the number is negative, make it positive for counting\par
+        num = Math.abs(num);\par
+\par
+        // Count the digits using a loop\par
+        while (num > 0) \{\par
+            num = num / 10;  // Remove the last digit\par
+            count++;  // Increment the count\par
+        \}\par
+\par
+        return count;\par
+    \}\par
+\}\par
+\par
+\b\fs24 Q.19. Write a Java program to check whether a number is palindrome or not.\par
+\b0\fs20 import java.util.Scanner;\par
+\par
+public class PalindromeNumber \{\par
+    public static void main(String[] args) \{\par
+        Scanner scanner = new Scanner(System.in);\par
+\par
+        // Input: Prompt the user to enter a number\par
+        System.out.print("Enter a number: ");\par
+        int number = scanner.nextInt();\par
+\par
+        // Check if the number is a palindrome\par
+        boolean isPalindrome = isPalindrome(number);\par
+\par
+        // Output: Display the result\par
+        if (isPalindrome) \{\par
+            System.out.println(number + " is a palindrome.");\par
+        \} else \{\par
+            System.out.println(number + " is not a palindrome.");\par
+        \}\par
+    \}\par
+\par
+    /**\par
+     * Method to check if a number is a palindrome.\par
+     * @param num The number to be checked.\par
+     * @return true if the number is a palindrome, false otherwise.\par
+     */\par
+    public static boolean isPalindrome(int num) \{\par
+        int originalNum = num;\par
+        int reversedNum = 0;\par
+\par
+        // Reverse the number\par
+        while (num != 0) \{\par
+            int digit = num % 10;  // Get the last digit\par
+            reversedNum = reversedNum * 10 + digit;  // Build the reversed number\par
+            num = num / 10;  // Remove the last digit\par
+        \}\par
+\par
+        // Check if the reversed number is equal to the original number\par
+        return originalNum == reversedNum;\par
+    \}\par
+\}\par
+\par
+\b\fs24 Q.20. Write a Java program to check whether a number is prime or not.\par
+\b0\fs20 import java.util.Scanner;\par
+\par
+public class PrimeNumberChecker \{\par
+    public static void main(String[] args) \{\par
+        Scanner scanner = new Scanner(System.in);\par
+\par
+        // Input: Prompt the user to enter a number\par
+        System.out.print("Enter a number: ");\par
+        int number = scanner.nextInt();\par
+\par
+        // Check if the number is prime\par
+        boolean isPrime = isPrime(number);\par
+\par
+        // Output: Display the result\par
+        if (isPrime) \{\par
+            System.out.println(number + " is a prime number.");\par
+        \} else \{\par
+            System.out.println(number + " is not a prime number.");\par
+        \}\par
+    \}\par
+\par
+    /**\par
+     * Method to check if a number is prime.\par
+     * @param num The number to be checked.\par
+     * @return true if the number is prime, false otherwise.\par
+     */\par
+    public static boolean isPrime(int num) \{\par
+        // Handle edge cases\par
+        if (num <= 1) \{\par
+            return false;  // Numbers less than or equal to 1 are not prime\par
+        \}\par
+        \par
+        // Check divisibility from 2 to sqrt(num)\par
+        for (int i = 2; i <= Math.sqrt(num); i++) \{\par
+            if (num % i == 0) \{\par
+                return false;  // If divisible by any number other than 1 and itself, it's not prime\par
+            \}\par
+        \}\par
+        \par
+        return true;  // If no divisors found, the number is prime\par
+    \}\par
+\}\par
+\par
+\b\fs24 Q.21. Write a Java program to convert a Binary Number to Decimal and Decimal to Binary.\par
+\b0\fs20 import java.util.Scanner;\par
+\par
+public class BinaryDecimalConverter \{\par
+    public static void main(String[] args) \{\par
+        Scanner scanner = new Scanner(System.in);\par
+\par
+        // Choose conversion direction\par
+        System.out.println("Choose conversion type:");\par
+        System.out.println("1. Binary to Decimal");\par
+        System.out.println("2. Decimal to Binary");\par
+        System.out.print("Enter your choice (1 or 2): ");\par
+        int choice = scanner.nextInt();\par
+\par
+        if (choice == 1) \{\par
+            // Binary to Decimal Conversion\par
+            System.out.print("Enter a binary number: ");\par
+            String binary = scanner.next();\par
+            int decimal = binaryToDecimal(binary);\par
+            System.out.println("The decimal equivalent of binary " + binary + " is: " + decimal);\par
+        \} else if (choice == 2) \{\par
+            // Decimal to Binary Conversion\par
+            System.out.print("Enter a decimal number: ");\par
+            int decimal = scanner.nextInt();\par
+            String binary = decimalToBinary(decimal);\par
+            System.out.println("The binary equivalent of decimal " + decimal + " is: " + binary);\par
+        \} else \{\par
+            System.out.println("Invalid choice.");\par
+        \}\par
+\par
+        scanner.close();\par
+    \}\par
+\par
+    /**\par
+     * Method to convert a binary number to decimal.\par
+     * @param binary The binary number as a string.\par
+     * @return The decimal equivalent of the binary number.\par
+     */\par
+    public static int binaryToDecimal(String binary) \{\par
+        int decimal = 0;\par
+        int power = 0;\par
+\par
+        // Iterate over the binary string in reverse order (right to left)\par
+        for (int i = binary.length() - 1; i >= 0; i--) \{\par
+            if (binary.charAt(i) == '1') \{\par
+                decimal += Math.pow(2, power);  // Add the value of the current bit (1 or 0)\par
+            \}\par
+            power++;\par
+        \}\par
+        return decimal;\par
+    \}\par
+\par
+    /**\par
+     * Method to convert a decimal number to binary.\par
+     * @param decimal The decimal number.\par
+     * @return The binary equivalent of the decimal number.\par
+     */\par
+    public static String decimalToBinary(int decimal) \{\par
+        if (decimal == 0) \{\par
+            return "0";  // Special case for 0\par
+        \}\par
+\par
+        StringBuilder binary = new StringBuilder();\par
+\par
+        // Divide the number by 2 and store the remainder (binary digits)\par
+        while (decimal > 0) \{\par
+            binary.insert(0, decimal % 2);  // Insert the remainder at the beginning\par
+            decimal /= 2;  // Divide the number by 2\par
+        \}\par
+\par
+        return binary.toString();\par
+    \}\par
+\}\par
+\f1\par
+\b\f0\fs24 Q.22. Write a Java program to find median of a set of numbers.\par
+\b0\fs20 import java.util.Arrays;\par
+import java.util.Scanner;\par
+\par
+public class MedianCalculator \{\par
+    public static void main(String[] args) \{\par
+        Scanner scanner = new Scanner(System.in);\par
+\par
+        // Input: Prompt the user to enter a set of numbers\par
+        System.out.print("Enter the number of elements: ");\par
+        int n = scanner.nextInt();\par
+\par
+        double[] numbers = new double[n];\par
+\par
+        System.out.println("Enter the elements:");\par
+\par
+        // Read the numbers from the user\par
+        for (int i = 0; i < n; i++) \{\par
+            numbers[i] = scanner.nextDouble();\par
+        \}\par
+\par
+        // Calculate the median\par
+        double median = findMedian(numbers);\par
+\par
+        // Output: Display the median\par
+        System.out.println("The median of the given numbers is: " + median);\par
+    \}\par
+\par
+    /**\par
+     * Method to find the median of a set of numbers.\par
+     * @param numbers The array of numbers.\par
+     * @return The median value.\par
+     */\par
+    public static double findMedian(double[] numbers) \{\par
+        // Sort the array to arrange the numbers in ascending order\par
+        Arrays.sort(numbers);\par
+\par
+        int n = numbers.length;\par
+\par
+        // If the number of elements is odd, the median is the middle element\par
+        if (n % 2 != 0) \{\par
+            return numbers[n / 2];\par
+        \} else \{\par
+            // If the number of elements is even, the median is the average of the two middle elements\par
+            return (numbers[(n - 1) / 2] + numbers[n / 2]) / 2.0;\par
+        \}\par
+    \}\par
+\}\par
+\par
+\b\fs24 Q.23. Write Java programs for the patterns given bellow:\par
+(a)\par
+ 1\par
+ 2 3 4\par
+ 5 6 7 8 9\par
+(b) \par
+      1\par
+    2 1 2\par
+  3 2 1 2 3\par
+4 3 2 1 2 3 4\par
+FOR (a)\par
+\b0\fs20     public class PatternA \{\par
+    public static void main(String[] args) \{\par
+        int number = 1;  // To keep track of the current number\par
+\par
+        // Loop through the rows\par
+        for (int i = 1; i <= 3; i++) \{\par
+            // Print the numbers for the current row\par
+            for (int j = 1; j <= (2 * i - 1); j++) \{\par
+                System.out.print(number + " ");\par
+                number++;\par
+            \}\par
+            System.out.println(); // Move to the next line after each row\par
+        \}\par
+    \}\par
+\}\par
+\b\fs24 FOR (b)\par
+\b0\fs20     public class PatternB \{\par
+    public static void main(String[] args) \{\par
+        // Loop through the rows\par
+        for (int i = 1; i <= 4; i++) \{\par
+            // Print the decreasing numbers\par
+            for (int j = i; j >= 1; j--) \{\par
+                System.out.print(j + " ");\par
+            \}\par
+\par
+            // Print the increasing numbers (starting from 2)\par
+            for (int j = 2; j <= i; j++) \{\par
+                System.out.print(j + " ");\par
+            \}\par
+            \par
+            System.out.println(); // Move to the next line after each row\par
+        \}\par
+    \}\par
+\}\par
+\par
+\b\fs24 Q.24. Write a Java program to calculate Sum & Average of an integer array.\par
+\b0\fs20 import java.util.Scanner;\par
+\par
+public class SumAndAverage \{\par
+    public static void main(String[] args) \{\par
+        Scanner scanner = new Scanner(System.in);\par
+\par
+        // Input: Get the size of the array from the user\par
+        System.out.print("Enter the number of elements in the array: ");\par
+        int n = scanner.nextInt();\par
+\par
+        // Create an array of the specified size\par
+        int[] numbers = new int[n];\par
+\par
+        // Input: Get the elements of the array\par
+        System.out.println("Enter the elements of the array:");\par
+        for (int i = 0; i < n; i++) \{\par
+            numbers[i] = scanner.nextInt();\par
+        \}\par
+\par
+        // Calculate the sum and average of the array\par
+        int sum = calculateSum(numbers);\par
+        double average = calculateAverage(sum, n);\par
+\par
+        // Output: Display the sum and average\par
+        System.out.println("Sum of the array elements: " + sum);\par
+        System.out.println("Average of the array elements: " + average);\par
+\par
+        scanner.close();\par
+    \}\par
+\par
+    /**\par
+     * Method to calculate the sum of the elements in the array.\par
+     * @param numbers The array of numbers.\par
+     * @return The sum of the elements.\par
+     */\par
+    public static int calculateSum(int[] numbers) \{\par
+        int sum = 0;\par
+        for (int num : numbers) \{\par
+            sum += num;  // Add each element to the sum\par
+        \}\par
+        return sum;\par
+    \}\par
+\par
+    /**\par
+     * Method to calculate the average of the elements in the array.\par
+     * @param sum The sum of the elements.\par
+     * @param n The number of elements in the array.\par
+     * @return The average of the elements.\par
+     */\par
+    public static double calculateAverage(int sum, int n) \{\par
+        return (double) sum / n;  // Calculate average as sum divided by number of elements\par
+    \}\par
+\}\par
+\par
+\b\fs24 Q.25. Write a Java program to implement stack using array.\par
+\b0\fs20 import java.util.Scanner;\par
+ public class StackUsingArray \{\par
+    private int maxSize;\par
+    private int top;\par
+    private int[] stack;\par
+\par
+    // Constructor to initialize the stack\par
+    public StackUsingArray(int size) \{\par
+        maxSize = size;\par
+        stack = new int[maxSize];\par
+        top = -1;  // Stack is initially empty\par
+    \}\par
+\par
+    // Push operation: Add an element to the stack\par
+    public void push(int value) \{\par
+        if (top == maxSize - 1) \{\par
+            System.out.println("Stack Overflow! Cannot push " + value);\par
+        \} else \{\par
+            stack[++top] = value;\par
+            System.out.println(value + " pushed to stack.");\par
+        \}\par
+    \}\par
+\par
+    // Pop operation: Remove an element from the stack\par
+    public void pop() \{\par
+        if (top == -1) \{\par
+            System.out.println("Stack Underflow! The stack is empty.");\par
+        \} else \{\par
+            System.out.println("Popped element: " + stack[top--]);\par
+        \}\par
+    \}\par
+\par
+    // Peek operation: Get the top element of the stack without removing it\par
+    public void peek() \{\par
+        if (top == -1) \{\par
+            System.out.println("Stack is empty.");\par
+        \} else \{\par
+            System.out.println("Top element: " + stack[top]);\par
+        \}\par
+    \}\par
+\par
+    // Check if the stack is empty\par
+    public boolean isEmpty() \{\par
+        return top == -1;\par
+    \}\par
+\par
+    // Check if the stack is full\par
+    public boolean isFull() \{\par
+        return top == maxSize - 1;\par
+    \}\par
+\par
+    // Display the contents of the stack\par
+    public void display() \{\par
+        if (top == -1) \{\par
+            System.out.println("Stack is empty.");\par
+        \} else \{\par
+            System.out.print("Stack elements: ");\par
+            for (int i = 0; i <= top; i++) \{\par
+                System.out.print(stack[i] + " ");\par
+            \}\par
+            System.out.println();\par
+        \}\par
+    \}\par
+\par
+    public static void main(String[] args) \{\par
+        Scanner scanner = new Scanner(System.in);\par
+\par
+        // Create stack instance with user input size\par
+        System.out.print("Enter the size of the stack: ");\par
+        int size = scanner.nextInt();\par
+        StackUsingArray stack = new StackUsingArray(size);\par
+\par
+        while (true) \{\par
+            // Menu for stack operations\par
+            System.out.println("\\nStack Operations:");\par
+            System.out.println("1. Push");\par
+            System.out.println("2. Pop");\par
+            System.out.println("3. Peek");\par
+            System.out.println("4. Display");\par
+            System.out.println("5. Check if Stack is Empty");\par
+            System.out.println("6. Check if Stack is Full");\par
+            System.out.println("7. Exit");\par
+\par
+            System.out.print("Enter your choice: ");\par
+            int choice = scanner.nextInt();\par
+\par
+            switch (choice) \{\par
+                case 1:\par
+                    System.out.print("Enter value to push: ");\par
+                    int value = scanner.nextInt();\par
+                    stack.push(value);\par
+                    break;\par
+                case 2:\par
+                    stack.pop();\par
+                    break;\par
+                case 3:\par
+                    stack.peek();\par
+                    break;\par
+                case 4:\par
+                    stack.display();\par
+                    break;\par
+                case 5:\par
+                    if (stack.isEmpty()) \{\par
+                        System.out.println("Stack is empty.");\par
+                    \} else \{\par
+                        System.out.println("Stack is not empty.");\par
+                    \}\par
+                    break;\par
+                case 6:\par
+                    if (stack.isFull()) \{\par
+                        System.out.println("Stack is full.");\par
+                    \} else \{\par
+                        System.out.println("Stack is not full.");\par
+                    \}\par
+                    break;\par
+                case 7:\par
+                    System.out.println("Exiting...");\par
+                    scanner.close();\par
+                    System.exit(0);\par
+                    break;\par
+                default:\par
+                    System.out.println("Invalid choice! Please enter a valid option.");\par
+            \}\par
+        \}\par
+    \}\par
+\}\par
+\par
+\b\fs24 Q.26. Write a Java program to implement Queue using array.\par
+\b0\fs20 import java.util.Scanner;\par
+\par
+public class QueueUsingArray \{\par
+    private int maxSize;\par
+    private int front;\par
+    private int rear;\par
+    private int[] queue;\par
+\par
+    // Constructor to initialize the queue\par
+    public QueueUsingArray(int size) \{\par
+        maxSize = size;\par
+        queue = new int[maxSize];\par
+        front = -1;  // Front of the queue\par
+        rear = -1;   // Rear of the queue\par
+    \}\par
+\par
+    // Enqueue operation: Add an element to the queue\par
+    public void enqueue(int value) \{\par
+        if (rear == maxSize - 1) \{\par
+            System.out.println("Queue Overflow! Cannot enqueue " + value);\par
+        \} else \{\par
+            if (front == -1) \{\par
+                front = 0;  // If queue is empty, set front to 0\par
+            \}\par
+            queue[++rear] = value;  // Add the element to the rear of the queue\par
+            System.out.println(value + " enqueued to queue.");\par
+        \}\par
+    \}\par
+\par
+    // Dequeue operation: Remove an element from the queue\par
+    public void dequeue() \{\par
+        if (front == -1 || front > rear) \{\par
+            System.out.println("Queue Underflow! The queue is empty.");\par
+        \} else \{\par
+            System.out.println("Dequeued element: " + queue[front++]);\par
+        \}\par
+    \}\par
+\par
+    // Peek operation: Get the front element of the queue without removing it\par
+    public void peek() \{\par
+        if (front == -1 || front > rear) \{\par
+            System.out.println("Queue is empty.");\par
+        \} else \{\par
+            System.out.println("Front element: " + queue[front]);\par
+        \}\par
+    \}\par
+\par
+    // Check if the queue is empty\par
+    public boolean isEmpty() \{\par
+        return front == -1 || front > rear;\par
+    \}\par
+\par
+    // Check if the queue is full\par
+    public boolean isFull() \{\par
+        return rear == maxSize - 1;\par
+    \}\par
+\par
+    // Display the contents of the queue\par
+    public void display() \{\par
+        if (front == -1 || front > rear) \{\par
+            System.out.println("Queue is empty.");\par
+        \} else \{\par
+            System.out.print("Queue elements: ");\par
+            for (int i = front; i <= rear; i++) \{\par
+                System.out.print(queue[i] + " ");\par
+            \}\par
+            System.out.println();\par
+        \}\par
+    \}\par
+\par
+    public static void main(String[] args) \{\par
+        Scanner scanner = new Scanner(System.in);\par
+\par
+        // Create queue instance with user input size\par
+        System.out.print("Enter the size of the queue: ");\par
+        int size = scanner.nextInt();\par
+        QueueUsingArray queue = new QueueUsingArray(size);\par
+\par
+        while (true) \{\par
+            // Menu for queue operations\par
+            System.out.println("\\nQueue Operations:");\par
+            System.out.println("1. Enqueue");\par
+            System.out.println("2. Dequeue");\par
+            System.out.println("3. Peek");\par
+            System.out.println("4. Display");\par
+            System.out.println("5. Check if Queue is Empty");\par
+            System.out.println("6. Check if Queue is Full");\par
+            System.out.println("7. Exit");\par
+\par
+            System.out.print("Enter your choice: ");\par
+            int choice = scanner.nextInt();\par
+\par
+            switch (choice) \{\par
+                case 1:\par
+                    System.out.print("Enter value to enqueue: ");\par
+                    int value = scanner.nextInt();\par
+                    queue.enqueue(value);\par
+                    break;\par
+                case 2:\par
+                    queue.dequeue();\par
+                    break;\par
+                case 3:\par
+                    queue.peek();\par
+                    break;\par
+                case 4:\par
+                    queue.display();\par
+                    break;\par
+                case 5:\par
+                    if (queue.isEmpty()) \{\par
+                        System.out.println("Queue is empty.");\par
+                    \} else \{\par
+                        System.out.println("Queue is not empty.");\par
+                    \}\par
+                    break;\par
+                case 6:\par
+                    if (queue.isFull()) \{\par
+                        System.out.println("Queue is full.");\par
+                    \} else \{\par
+                        System.out.println("Queue is not full.");\par
+                    \}\par
+                    break;\par
+                case 7:\par
+                    System.out.println("Exiting...");\par
+                    scanner.close();\par
+                    System.exit(0);\par
+                    break;\par
+                default:\par
+                    System.out.println("Invalid choice! Please enter a valid option.");\par
+            \}\par
+        \}\par
+    \}\par
+\}\par
+\par
+\b\fs24 Q.27. Write a Java program to enter n elements in an array and find smallest number among them.\par
+\b0\fs20 import java.util.Scanner;\par
+\par
+public class SmallestNumberInArray \{\par
+    public static void main(String[] args) \{\par
+        Scanner scanner = new Scanner(System.in);\par
+\par
+        // Input: Get the number of elements in the array\par
+        System.out.print("Enter the number of elements in the array: ");\par
+        int n = scanner.nextInt();\par
+\par
+        // Create an array of size 'n'\par
+        int[] numbers = new int[n];\par
+\par
+        // Input: Get the elements of the array\par
+        System.out.println("Enter the elements of the array:");\par
+        for (int i = 0; i < n; i++) \{\par
+            numbers[i] = scanner.nextInt();\par
+        \}\par
+\par
+        // Find the smallest number in the array\par
+        int smallest = findSmallest(numbers);\par
+\par
+        // Output: Display the smallest number\par
+        System.out.println("The smallest number in the array is: " + smallest);\par
+\par
+        scanner.close();\par
+    \}\par
+\par
+    /**\par
+     * Method to find the smallest number in the array.\par
+     * @param numbers The array of numbers.\par
+     * @return The smallest number.\par
+     */\par
+    public static int findSmallest(int[] numbers) \{\par
+        int smallest = numbers[0];  // Assume the first element is the smallest initially\par
+        \par
+        // Traverse the array to find the smallest number\par
+        for (int i = 1; i < numbers.length; i++) \{\par
+            if (numbers[i] < smallest) \{\par
+                smallest = numbers[i];\par
+            \}\par
+        \}\par
+        \par
+        return smallest;\par
+    \}\par
+\}\par
+\par
+\b\fs24 Q.28. Write Java program to find the sum of all odd numbers in a array.\par
+\b0\fs20 import java.util.Scanner;\par
+\par
+public class SumOfOddNumbersInArray \{\par
+    public static void main(String[] args) \{\par
+        Scanner scanner = new Scanner(System.in);\par
+\par
+        // Input: Get the number of elements in the array\par
+        System.out.print("Enter the number of elements in the array: ");\par
+        int n = scanner.nextInt();\par
+\par
+        // Create an array of size 'n'\par
+        int[] numbers = new int[n];\par
+\par
+        // Input: Get the elements of the array\par
+        System.out.println("Enter the elements of the array:");\par
+        for (int i = 0; i < n; i++) \{\par
+            numbers[i] = scanner.nextInt();\par
+        \}\par
+\par
+        // Find the sum of all odd numbers in the array\par
+        int sum = sumOfOddNumbers(numbers);\par
+\par
+        // Output: Display the sum of odd numbers\par
+        System.out.println("The sum of all odd numbers in the array is: " + sum);\par
+\par
+        scanner.close();\par
+    \}\par
+\par
+    /**\par
+     * Method to find the sum of all odd numbers in the array.\par
+     * @param numbers The array of numbers.\par
+     * @return The sum of all odd numbers.\par
+     */\par
+    public static int sumOfOddNumbers(int[] numbers) \{\par
+        int sum = 0;\par
+\par
+        // Traverse the array and sum up all odd numbers\par
+        for (int i = 0; i < numbers.length; i++) \{\par
+            if (numbers[i] % 2 != 0) \{\par
+                sum += numbers[i];\par
+            \}\par
+        \}\par
+\par
+        return sum;\par
+    \}\par
+\}\par
+\par
+\b\fs24 Q.29. Write a Java program to find duplicate elements in a 1D array and find their frequency of occurrence.\par
+\b0\fs20 import java.util.HashMap;\par
+import java.util.Scanner;\par
+\par
+public class DuplicateElementsInArray \{\par
+    public static void main(String[] args) \{\par
+        Scanner scanner = new Scanner(System.in);\par
+\par
+        // Input: Get the number of elements in the array\par
+        System.out.print("Enter the number of elements in the array: ");\par
+        int n = scanner.nextInt();\par
+\par
+        // Create an array of size 'n'\par
+        int[] array = new int[n];\par
+\par
+        // Input: Get the elements of the array\par
+        System.out.println("Enter the elements of the array:");\par
+        for (int i = 0; i < n; i++) \{\par
+            array[i] = scanner.nextInt();\par
+        \}\par
+\par
+        // Find duplicates and their frequency\par
+        findDuplicates(array);\par
+\par
+        scanner.close();\par
+    \}\par
+\par
+    /**\par
+     * Method to find duplicate elements and their frequency.\par
+     * @param array The array of elements.\par
+     */\par
+    public static void findDuplicates(int[] array) \{\par
+        HashMap<Integer, Integer> frequencyMap = new HashMap<>();\par
+\par
+        // Count the frequency of each element in the array\par
+        for (int num : array) \{\par
+            frequencyMap.put(num, frequencyMap.getOrDefault(num, 0) + 1);\par
+        \}\par
+\par
+        // Display the duplicate elements and their frequency\par
+        System.out.println("Duplicate elements and their frequency:");\par
+        boolean hasDuplicates = false;\par
+        for (HashMap.Entry<Integer, Integer> entry : frequencyMap.entrySet()) \{\par
+            if (entry.getValue() > 1) \{\par
+                System.out.println("Element: " + entry.getKey() + ", Frequency: " + entry.getValue());\par
+                hasDuplicates = true;\par
+            \}\par
+        \}\par
+\par
+        // If no duplicates are found\par
+        if (!hasDuplicates) \{\par
+            System.out.println("No duplicate elements found in the array.");\par
+        \}\par
+    \}\par
+\}\par
+\par
+\b\fs24 Q.30. Write a Java program to print every alternate number of a given array.\par
+\b0\fs20 import java.util.Scanner;\par
+\par
+public class AlternateNumbersInArray \{\par
+    public static void main(String[] args) \{\par
+        Scanner scanner = new Scanner(System.in);\par
+\par
+        // Input: Get the number of elements in the array\par
+        System.out.print("Enter the number of elements in the array: ");\par
+        int n = scanner.nextInt();\par
+\par
+        // Create an array of size 'n'\par
+        int[] array = new int[n];\par
+\par
+        // Input: Get the elements of the array\par
+        System.out.println("Enter the elements of the array:");\par
+        for (int i = 0; i < n; i++) \{\par
+            array[i] = scanner.nextInt();\par
+        \}\par
+\par
+        // Print every alternate number in the array\par
+        System.out.println("Every alternate number in the array:");\par
+        for (int i = 0; i < n; i += 2) \{ // Increment by 2 to skip alternate elements\par
+            System.out.print(array[i] + " ");\par
+        \}\par
+\par
+        scanner.close();\par
+    \}\par
+\}\par
+\par
+\b\fs24 Q.31. Write a Java program to show 0-arguments constructor.\par
+\b0\fs20 class MyClass \{\par
+    // 0-arguments constructor\par
+    MyClass() \{\par
+        System.out.println("This is a 0-arguments constructor.");\par
+    \}\par
+\par
+    // Method to display a message\par
+    void displayMessage() \{\par
+        System.out.println("Hello from MyClass!");\par
+    \}\par
+\}\par
+\par
+public class ZeroArgumentsConstructor \{\par
+    public static void main(String[] args) \{\par
+        // Create an object of MyClass using the 0-arguments constructor\par
+        MyClass obj = new MyClass();\par
+\par
+        // Call a method of the class\par
+        obj.displayMessage();\par
+    \}\par
+\}\par
+\par
+\b\fs24 Q.32. Write a Java program to show parameterized constructor.\par
+\b0\fs20 class Person \{\par
+    String name;\par
+    int age;\par
+\par
+    // Parameterized constructor\par
+    Person(String name, int age) \{\par
+        this.name = name;\par
+        this.age = age;\par
+    \}\par
+\par
+    // Method to display person's details\par
+    void displayDetails() \{\par
+        System.out.println("Name: " + name);\par
+        System.out.println("Age: " + age);\par
+    \}\par
+\}\par
+\par
+public class ParameterizedConstructorExample \{\par
+    public static void main(String[] args) \{\par
+        // Create an object of Person using the parameterized constructor\par
+        Person person1 = new Person("Alice", 25);\par
+        Person person2 = new Person("Bob", 30);\par
+\par
+        // Display the details of each person\par
+        System.out.println("Person 1:");\par
+        person1.displayDetails();\par
+\par
+        System.out.println("\\nPerson 2:");\par
+        person2.displayDetails();\par
+    \}\par
+\}\par
+\par
+\b\fs24 Q.33. Write a class, Commission, which has an instance variable, sales; an appropriate constructor; and a method, commission() that returns the commission.Now write a demo class  to test the Commission class by reading a sale from the user, using it to create a Commission object after validating that the value is not negative. Finally, call the commission() method to get and print the commission. If the sales are negative, your demo should print the message \ldblquote Invalid Input\rdblquote\par
+\b0\fs20 import java.util.Scanner;\par
+\par
+class Commission \{\par
+    private double sales; // Instance variable for sales\par
+\par
+    // Constructor to initialize sales\par
+    public Commission(double sales) \{\par
+        this.sales = sales;\par
+    \}\par
+\par
+    // Method to calculate commission based on sales\par
+    public double commission() \{\par
+        if (sales >= 0 && sales <= 1000) \{\par
+            return sales * 0.05; // 5% commission for sales <= 1000\par
+        \} else if (sales <= 5000) \{\par
+            return sales * 0.1; // 10% commission for sales > 1000 and <= 5000\par
+        \} else \{\par
+            return sales * 0.2; // 20% commission for sales > 5000\par
+        \}\par
+    \}\par
+\}\par
+\par
+public class CommissionDemo \{\par
+    public static void main(String[] args) \{\par
+        Scanner scanner = new Scanner(System.in);\par
+\par
+        // Read sales value from the user\par
+        System.out.print("Enter sales amount: ");\par
+        double sales = scanner.nextDouble();\par
+\par
+        // Validate the input\par
+        if (sales < 0) \{\par
+            System.out.println("Invalid Input"); // Handle negative sales input\par
+        \} else \{\par
+            // Create a Commission object\par
+            Commission commissionObj = new Commission(sales);\par
+\par
+            // Calculate and display the commission\par
+            double commission = commissionObj.commission();\par
+            System.out.println("The commission for sales of " + sales + " is: " + commission);\par
+        \}\par
+\par
+        scanner.close();\par
+    \}\par
+\}\par
+\par
+
+\pard\sa200\sl276\slmult1\qc\b\fs24\par
+}
+ 

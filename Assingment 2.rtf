@@ -1,0 +1,1464 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Comic Sans MS;}{\f1\fnil\fcharset0 Calibri;}}
+{\*\generator Riched20 10.0.19041}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\qc\b\f0\fs32\lang9 ASSINGMENT=2\par
+\par
+
+\pard\sa200\sl276\slmult1\fs24 Q.1. Given are two one-dimensional arrays A & B, which are sorted in ascending order. Write a Java program to merge them into single sorted array C that contains every item from arrays A & B, in ascending order.\par
+\b0\fs20 import java.util.Arrays;\par
+public class MergeSortedArrays \{\par
+    public static void main(String[] args) \{\par
+        // Example sorted arrays A and B\par
+        int[] A = \{1, 3, 5, 7\};\par
+        int[] B = \{2, 4, 6, 8, 10\};\par
+\par
+        // Merge the two arrays\par
+        int[] C = mergeArrays(A, B);\par
+\par
+        // Print the merged sorted array\par
+        System.out.println("Merged sorted array: " + Arrays.toString(C));\par
+    \}\par
+\par
+    /**\par
+     * Merges two sorted arrays into a single sorted array.\par
+     * \par
+     * @param A The first sorted array.\par
+     * @param B The second sorted array.\par
+     * @return The merged sorted array.\par
+     */\par
+    public static int[] mergeArrays(int[] A, int[] B) \{\par
+        int n = A.length;\par
+        int m = B.length;\par
+        int[] C = new int[n + m]; // Create the result array\par
+\par
+        int i = 0, j = 0, k = 0;\par
+\par
+        // Merge elements from A and B into C\par
+        while (i < n && j < m) \{\par
+            if (A[i] <= B[j]) \{\par
+                C[k++] = A[i++];\par
+            \} else \{\par
+                C[k++] = B[j++];\par
+            \}\par
+        \}\par
+\par
+        // Copy remaining elements from A, if any\par
+        while (i < n) \{\par
+            C[k++] = A[i++];\par
+        \}\par
+\par
+        // Copy remaining elements from B, if any\par
+        while (j < m) \{\par
+            C[k++] = B[j++];\par
+        \}\par
+\par
+        return C;\par
+    \}\par
+\}\par
+\par
+\b\fs24 Q.2. Write a Java program to show 0-arguments constructor.\par
+\b0\fs20 class MyClass \{\par
+    // 0-arguments constructor\par
+    MyClass() \{\par
+        System.out.println("This is a 0-arguments constructor.");\par
+    \}\par
+\par
+    // Method to display a message\par
+    void displayMessage() \{\par
+        System.out.println("Hello from MyClass!");\par
+    \}\par
+\}\par
+\par
+public class ZeroArgumentsConstructor \{\par
+    public static void main(String[] args) \{\par
+        // Create an object of MyClass using the 0-arguments constructor\par
+        MyClass obj = new MyClass();\par
+\par
+        // Call a method of the class\par
+        obj.displayMessage();\par
+    \}\par
+\}\par
+\par
+\b\fs24 Q.3. Write a Java program to show parameterized constructor.\par
+\b0\fs20 class Person \{\par
+    String name;\par
+    int age;\par
+\par
+    // Parameterized constructor\par
+    Person(String name, int age) \{\par
+        this.name = name;\par
+        this.age = age;\par
+    \}\par
+\par
+    // Method to display person's details\par
+    void displayDetails() \{\par
+        System.out.println("Name: " + name);\par
+        System.out.println("Age: " + age);\par
+    \}\par
+\}\par
+\par
+public class ParameterizedConstructorExample \{\par
+    public static void main(String[] args) \{\par
+        // Create an object of Person using the parameterized constructor\par
+        Person person1 = new Person("Alice", 25);\par
+        Person person2 = new Person("Bob", 30);\par
+\par
+        // Display the details of each person\par
+        System.out.println("Person 1:");\par
+        person1.displayDetails();\par
+\par
+        System.out.println("\\nPerson 2:");\par
+        person2.displayDetails();\par
+    \}\par
+\}\par
+\par
+\b\fs24 Q.4. Write a Java program to show constructor overloading.\par
+\b0\fs20 class Person \{\par
+    private String name;\par
+    private int age;\par
+\par
+    // Default constructor (0-arguments constructor)\par
+    Person() \{\par
+        this.name = "Unknown";\par
+        this.age = 0;\par
+        System.out.println("Default constructor called.");\par
+    \}\par
+\par
+    // Constructor with one parameter\par
+    Person(String name) \{\par
+        this.name = name;\par
+        this.age = 0;\par
+        System.out.println("Constructor with one parameter called.");\par
+    \}\par
+\par
+    // Constructor with two parameters\par
+    Person(String name, int age) \{\par
+        this.name = name;\par
+        this.age = age;\par
+        System.out.println("Constructor with two parameters called.");\par
+    \}\par
+\par
+    // Method to display person's details\par
+    void displayDetails() \{\par
+        System.out.println("Name: " + name + ", Age: " + age);\par
+    \}\par
+\}\par
+\par
+public class ConstructorOverloading \{\par
+    public static void main(String[] args) \{\par
+        // Using the default constructor\par
+        Person person1 = new Person();\par
+        person1.displayDetails();\par
+\par
+        // Using the constructor with one parameter\par
+        Person person2 = new Person("Alice");\par
+        person2.displayDetails();\par
+\par
+        // Using the constructor with two parameters\par
+        Person person3 = new Person("Bob", 30);\par
+        person3.displayDetails();\par
+    \}\par
+\}\par
+\par
+\b\fs24 Q.5. Write a Java program to implement the concept of inheritance.\par
+\b0\fs20 // Base class (Parent class)\par
+class Animal \{\par
+    String name;\par
+\par
+    // Constructor for Animal\par
+    Animal(String name) \{\par
+        this.name = name;\par
+    \}\par
+\par
+    // Method for making sound\par
+    void makeSound() \{\par
+        System.out.println(name + " makes a sound.");\par
+    \}\par
+\}\par
+\par
+// Derived class (Child class)\par
+class Dog extends Animal \{\par
+    // Constructor for Dog\par
+    Dog(String name) \{\par
+        super(name); // Call the constructor of the parent class\par
+    \}\par
+\par
+    // Overriding the makeSound method\par
+    @Override\par
+    void makeSound() \{\par
+        System.out.println(name + " barks.");\par
+    \}\par
+\par
+    // Method specific to Dog class\par
+    void wagTail() \{\par
+        System.out.println(name + " is wagging its tail.");\par
+    \}\par
+\}\par
+\par
+public class InheritanceExample \{\par
+    public static void main(String[] args) \{\par
+        // Create an Animal object\par
+        Animal animal = new Animal("Generic Animal");\par
+        animal.makeSound();\par
+\par
+        // Create a Dog object\par
+        Dog dog = new Dog("Buddy");\par
+        dog.makeSound(); // Call the overridden method\par
+        dog.wagTail();   // Call the method specific to Dog\par
+    \}\par
+\}\par
+\par
+\b\fs24 Q.6. Write a Java program to show method overloading.\par
+\b0\fs20 class Calculator \{\par
+    // Method to add two integers\par
+    int add(int a, int b) \{\par
+        return a + b;\par
+    \}\par
+\par
+    // Overloaded method to add three integers\par
+    int add(int a, int b, int c) \{\par
+        return a + b + c;\par
+    \}\par
+\par
+    // Overloaded method to add two double values\par
+    double add(double a, double b) \{\par
+        return a + b;\par
+    \}\par
+\}\par
+\par
+public class MethodOverloadingExample \{\par
+    public static void main(String[] args) \{\par
+        Calculator calc = new Calculator();\par
+\par
+        // Call the method with two integers\par
+        System.out.println("Sum of 10 and 20: " + calc.add(10, 20));\par
+\par
+        // Call the overloaded method with three integers\par
+        System.out.println("Sum of 10, 20, and 30: " + calc.add(10, 20, 30));\par
+\par
+        // Call the overloaded method with two double values\par
+        System.out.println("Sum of 10.5 and 20.5: " + calc.add(10.5, 20.5));\par
+    \}\par
+\}\par
+\par
+\b\fs24 Q.7. Write a Java program to show method overriding.\par
+\b0\fs20 // Parent class (Base class)\par
+class Animal \{\par
+    // Method in the parent class\par
+    void makeSound() \{\par
+        System.out.println("The animal makes a sound.");\par
+    \}\par
+\}\par
+\par
+// Child class (Derived class)\par
+class Dog extends Animal \{\par
+    // Method overriding in the child class\par
+    @Override\par
+    void makeSound() \{\par
+        System.out.println("The dog barks.");\par
+    \}\par
+\}\par
+\par
+class Cat extends Animal \{\par
+    // Method overriding in the child class\par
+    @Override\par
+    void makeSound() \{\par
+        System.out.println("The cat meows.");\par
+    \}\par
+\}\par
+\par
+public class MethodOverridingExample \{\par
+    public static void main(String[] args) \{\par
+        // Create an Animal reference and point it to a Dog object\par
+        Animal myDog = new Dog();\par
+        myDog.makeSound(); // Calls the Dog's makeSound method\par
+\par
+        // Create an Animal reference and point it to a Cat object\par
+        Animal myCat = new Cat();\par
+        myCat.makeSound(); // Calls the Cat's makeSound method\par
+\par
+        // Create an Animal reference and point it to an Animal object\par
+        Animal myAnimal = new Animal();\par
+        myAnimal.makeSound(); // Calls the Animal's makeSound method\par
+    \}\par
+\}\par
+\par
+\b\fs24 Q.8. Write a Java program to show method hiding.\par
+\b0\fs20 // Parent class (Base class)\par
+class Parent \{\par
+    // Static method in the parent class\par
+    static void display() \{\par
+        System.out.println("Parent class static method.");\par
+    \}\par
+\}\par
+\par
+// Child class (Derived class)\par
+class Child extends Parent \{\par
+    // Static method in the child class with the same signature\par
+    static void display() \{\par
+        System.out.println("Child class static method.");\par
+    \}\par
+\}\par
+\par
+public class MethodHidingExample \{\par
+    public static void main(String[] args) \{\par
+        // Calling static method using the class name\par
+        Parent.display(); // Calls Parent class's static method\par
+        Child.display();  // Calls Child class's static method\par
+\par
+        // Using references to call static methods\par
+        Parent obj1 = new Parent();\par
+        Parent obj2 = new Child();\par
+\par
+        obj1.display(); // Calls Parent class's static method\par
+        obj2.display(); // Calls Parent class's static method, due to reference type\par
+    \}\par
+\}\par
+\par
+\b\fs24 Q.9. Create a general class ThreeDObject and derive the classes Box, Cube, Cylinder and Cone from it. The class ThreeDObject has methods wholeSurfaceArea ( ) and volume ().Override these two methods in each of the derived classes to calculate the volume and whole surface area of each type of three-dimensional objects. The dimensions of the objects are to be taken from the users and passed through the respective constructors of each derived class. Write a main method to test these classes.\par
+\b0\fs20 import java.util.Scanner;\par
+\par
+// Base class (ThreeDObject)\par
+abstract class ThreeDObject \{\par
+    // Abstract methods to be overridden in derived classes\par
+    abstract double wholeSurfaceArea();\par
+    abstract double volume();\par
+\}\par
+\par
+// Derived class for Box\par
+class Box extends ThreeDObject \{\par
+    double length, width, height;\par
+\par
+    // Constructor to initialize dimensions\par
+    Box(double length, double width, double height) \{\par
+        this.length = length;\par
+        this.width = width;\par
+        this.height = height;\par
+    \}\par
+\par
+    // Override the wholeSurfaceArea method\par
+    @Override\par
+    double wholeSurfaceArea() \{\par
+        return 2 * (length * width + width * height + height * length);\par
+    \}\par
+\par
+    // Override the volume method\par
+    @Override\par
+    double volume() \{\par
+        return length * width * height;\par
+    \}\par
+\}\par
+\par
+// Derived class for Cube\par
+class Cube extends ThreeDObject \{\par
+    double side;\par
+\par
+    // Constructor to initialize side length\par
+    Cube(double side) \{\par
+        this.side = side;\par
+    \}\par
+\par
+    // Override the wholeSurfaceArea method\par
+    @Override\par
+    double wholeSurfaceArea() \{\par
+        return 6 * side * side;\par
+    \}\par
+\par
+    // Override the volume method\par
+    @Override\par
+    double volume() \{\par
+        return side * side * side;\par
+    \}\par
+\}\par
+\par
+// Derived class for Cylinder\par
+class Cylinder extends ThreeDObject \{\par
+    double radius, height;\par
+\par
+    // Constructor to initialize dimensions\par
+    Cylinder(double radius, double height) \{\par
+        this.radius = radius;\par
+        this.height = height;\par
+    \}\par
+\par
+    // Override the wholeSurfaceArea method\par
+    @Override\par
+    double wholeSurfaceArea() \{\par
+        return 2 * Math.PI * radius * (radius + height);\par
+    \}\par
+\par
+    // Override the volume method\par
+    @Override\par
+    double volume() \{\par
+        return Math.PI * radius * radius * height;\par
+    \}\par
+\}\par
+\par
+// Derived class for Cone\par
+class Cone extends ThreeDObject \{\par
+    double radius, height;\par
+\par
+    // Constructor to initialize dimensions\par
+    Cone(double radius, double height) \{\par
+        this.radius = radius;\par
+        this.height = height;\par
+    \}\par
+\par
+    // Override the wholeSurfaceArea method\par
+    @Override\par
+    double wholeSurfaceArea() \{\par
+        double slantHeight = Math.sqrt(radius * radius + height * height);\par
+        return Math.PI * radius * (radius + slantHeight);\par
+    \}\par
+\par
+    // Override the volume method\par
+    @Override\par
+    double volume() \{\par
+        return (1.0 / 3) * Math.PI * radius * radius * height;\par
+    \}\par
+\}\par
+\par
+public class ThreeDObjectTest \{\par
+    public static void main(String[] args) \{\par
+        Scanner scanner = new Scanner(System.in);\par
+\par
+        // Box Input and Calculation\par
+        System.out.println("Enter dimensions for Box (length, width, height):");\par
+        double boxLength = scanner.nextDouble();\par
+        double boxWidth = scanner.nextDouble();\par
+        double boxHeight = scanner.nextDouble();\par
+        Box box = new Box(boxLength, boxWidth, boxHeight);\par
+        System.out.println("Box Surface Area: " + box.wholeSurfaceArea());\par
+        System.out.println("Box Volume: " + box.volume());\par
+\par
+        // Cube Input and Calculation\par
+        System.out.println("\\nEnter side length for Cube:");\par
+        double cubeSide = scanner.nextDouble();\par
+        Cube cube = new Cube(cubeSide);\par
+        System.out.println("Cube Surface Area: " + cube.wholeSurfaceArea());\par
+        System.out.println("Cube Volume: " + cube.volume());\par
+\par
+        // Cylinder Input and Calculation\par
+        System.out.println("\\nEnter radius and height for Cylinder:");\par
+        double cylinderRadius = scanner.nextDouble();\par
+        double cylinderHeight = scanner.nextDouble();\par
+        Cylinder cylinder = new Cylinder(cylinderRadius, cylinderHeight);\par
+        System.out.println("Cylinder Surface Area: " + cylinder.wholeSurfaceArea());\par
+        System.out.println("Cylinder Volume: " + cylinder.volume());\par
+\par
+        // Cone Input and Calculation\par
+        System.out.println("\\nEnter radius and height for Cone:");\par
+        double coneRadius = scanner.nextDouble();\par
+        double coneHeight = scanner.nextDouble();\par
+        Cone cone = new Cone(coneRadius, coneHeight);\par
+        System.out.println("Cone Surface Area: " + cone.wholeSurfaceArea());\par
+        System.out.println("Cone Volume: " + cone.volume());\par
+\par
+        scanner.close();\par
+    \}\par
+\}\par
+\par
+\b\fs24 Q.10. Write a program to create a class named Vehicle having protected instance variables regnNumber, speed, color, ownerName and a method showData ( ) to show \ldblquote This is a vehicle class\rdblquote . Inherit the Vehicle class into subclasses named Bus and Car havingindividual private instance variables routeNumber in Bus and manufacturerName in Car and both of them having showData ( ) method showing all details of Bus and Car respectively with content of the super class\rquote s showData ( ) method.\par
+\b0\fs20 // Base class (Vehicle)\par
+class Vehicle \{\par
+    // Protected instance variables\par
+    protected String regnNumber;\par
+    protected int speed;\par
+    protected String color;\par
+    protected String ownerName;\par
+\par
+    // Constructor to initialize the variables\par
+    Vehicle(String regnNumber, int speed, String color, String ownerName) \{\par
+        this.regnNumber = regnNumber;\par
+        this.speed = speed;\par
+        this.color = color;\par
+        this.ownerName = ownerName;\par
+    \}\par
+\par
+    // Method to display vehicle's general data\par
+    void showData() \{\par
+        System.out.println("This is a vehicle class.");\par
+        System.out.println("Registration Number: " + regnNumber);\par
+        System.out.println("Speed: " + speed + " km/h");\par
+        System.out.println("Color: " + color);\par
+        System.out.println("Owner Name: " + ownerName);\par
+    \}\par
+\}\par
+\par
+// Subclass Bus inheriting from Vehicle\par
+class Bus extends Vehicle \{\par
+    // Private instance variable specific to Bus\par
+    private int routeNumber;\par
+\par
+    // Constructor to initialize Bus specific data\par
+    Bus(String regnNumber, int speed, String color, String ownerName, int routeNumber) \{\par
+        // Call the superclass (Vehicle) constructor\par
+        super(regnNumber, speed, color, ownerName);\par
+        this.routeNumber = routeNumber;\par
+    \}\par
+\par
+    // Overridden method to display Bus details\par
+    @Override\par
+    void showData() \{\par
+        // Call the superclass showData method\par
+        super.showData();\par
+        System.out.println("Route Number: " + routeNumber);\par
+    \}\par
+\}\par
+\par
+// Subclass Car inheriting from Vehicle\par
+class Car extends Vehicle \{\par
+    // Private instance variable specific to Car\par
+    private String manufacturerName;\par
+\par
+    // Constructor to initialize Car specific data\par
+    Car(String regnNumber, int speed, String color, String ownerName, String manufacturerName) \{\par
+        // Call the superclass (Vehicle) constructor\par
+        super(regnNumber, speed, color, ownerName);\par
+        this.manufacturerName = manufacturerName;\par
+    \}\par
+\par
+    // Overridden method to display Car details\par
+    @Override\par
+    void showData() \{\par
+        // Call the superclass showData method\par
+        super.showData();\par
+        System.out.println("Manufacturer Name: " + manufacturerName);\par
+    \}\par
+\}\par
+\par
+public class VehicleTest \{\par
+    public static void main(String[] args) \{\par
+        // Create a Bus object\par
+        Bus bus = new Bus("TN-01-1234", 80, "Yellow", "John Doe", 45);\par
+        System.out.println("\\nBus Details:");\par
+        bus.showData(); // Show Bus details\par
+\par
+        // Create a Car object\par
+        Car car = new Car("KA-05-6789", 120, "Red", "Jane Smith", "Toyota");\par
+        System.out.println("\\nCar Details:");\par
+        car.showData(); // Show Car details\par
+    \}\par
+\}\par
+\par
+\b\fs24 Q.11. Write a Java program which creates a base class Num and contains an integer number along with a method shownum() which displays the number. Now create a derived class HexNum which inherits Num and overrides shownum() which displays the hexadecimal value and octal value of the number. Demonstrate the working of the classes.\par
+\b0\fs20 // Base class (Num)\par
+class Num \{\par
+    int number;\par
+\par
+    // Constructor to initialize the number\par
+    Num(int number) \{\par
+        this.number = number;\par
+    \}\par
+\par
+    // Method to display the number\par
+    void shownum() \{\par
+        System.out.println("Number: " + number);\par
+    \}\par
+\}\par
+\par
+// Derived class (HexNum) that inherits from Num\par
+class HexNum extends Num \{\par
+\par
+    // Constructor to initialize the number in HexNum\par
+    HexNum(int number) \{\par
+        super(number); // Call the constructor of the base class (Num)\par
+    \}\par
+\par
+    // Override the shownum method to display hexadecimal and octal values\par
+    @Override\par
+    void shownum() \{\par
+        // Call the base class method to display the original number\par
+        super.shownum();\par
+\par
+        // Display the hexadecimal and octal values\par
+        System.out.println("Hexadecimal value: " + Integer.toHexString(number));\par
+        System.out.println("Octal value: " + Integer.toOctalString(number));\par
+    \}\par
+\}\par
+\par
+public class Main \{\par
+    public static void main(String[] args) \{\par
+        // Create an instance of HexNum\par
+        HexNum hexNum = new HexNum(255);\par
+\par
+        // Call the overridden shownum method\par
+        hexNum.shownum();\par
+    \}\par
+\}\par
+\par
+\b\fs24 Q.12. Create a base class Distance which stores the distance between two locations in miles and a method travelTime(). The method prints the time taken to cover the distance when the speed is 60 miles per hour. Now in a derived class DistanceMKS, override travelTime() so that it prints the time assuming the distance is in kilometers and the speed is 100 km per second. Demonstrate the working of the classes.\par
+\b0\fs20 // Base class (Distance)\par
+class Distance \{\par
+    double miles; // distance in miles\par
+\par
+    // Constructor to initialize the distance in miles\par
+    Distance(double miles) \{\par
+        this.miles = miles;\par
+    \}\par
+\par
+    // Method to calculate and display the time to cover the distance at 60 mph\par
+    void travelTime() \{\par
+        double time = miles / 60; // Time = distance / speed\par
+        System.out.println("Time to cover the distance of " + miles + " miles at 60 mph: " + time + " hours.");\par
+    \}\par
+\}\par
+\par
+// Derived class (DistanceMKS) that inherits from Distance\par
+class DistanceMKS extends Distance \{\par
+\par
+    // Constructor to initialize the distance in miles, but it will be used in kilometers in the derived class\par
+    DistanceMKS(double miles) \{\par
+        super(miles); // Call the base class constructor\par
+    \}\par
+\par
+    // Override the travelTime method to calculate time assuming the distance is in kilometers\par
+    @Override\par
+    void travelTime() \{\par
+        // Convert miles to kilometers (1 mile = 1.60934 km)\par
+        double kilometers = miles * 1.60934;\par
+        \par
+        // Speed is 100 km per second, so time = distance / speed\par
+        double timeInSeconds = kilometers / 100; // Time = distance / speed\par
+        \par
+        // Convert time in seconds to hours for better readability (1 hour = 3600 seconds)\par
+        double timeInHours = timeInSeconds / 3600;\par
+        \par
+        // Print the result\par
+        System.out.println("Time to cover the distance of " + kilometers + " kilometers at 100 km per second: " + timeInHours + " hours.");\par
+    \}\par
+\}\par
+\par
+public class Main \{\par
+    public static void main(String[] args) \{\par
+        // Create an instance of Distance with a distance in miles\par
+        Distance distance = new Distance(120); // Distance in miles\par
+\par
+        // Call the travelTime method of the base class (in miles and mph)\par
+        distance.travelTime();\par
+\par
+        // Create an instance of DistanceMKS with the same distance but calculated in kilometers and km/s\par
+        DistanceMKS distanceMKS = new DistanceMKS(120); // Distance in miles\par
+        distanceMKS.travelTime(); // This will use the overridden method in DistanceMKS\par
+    \}\par
+\}\par
+\par
+\b\fs24 13. Write a Java program to explain \ldblquote multilevel inheritance.\rdblquote\par
+\b0\fs20 // Base class (Animal)\par
+class Animal \{\par
+    // Instance variable\par
+    String name;\par
+\par
+    // Constructor to initialize the animal's name\par
+    Animal(String name) \{\par
+        this.name = name;\par
+    \}\par
+\par
+    // Method to display the animal's name\par
+    void showName() \{\par
+        System.out.println("Animal Name: " + name);\par
+    \}\par
+\}\par
+\par
+// Derived class (Mammal) inherits from Animal\par
+class Mammal extends Animal \{\par
+    // Constructor to initialize the mammal's name\par
+    Mammal(String name) \{\par
+        super(name); // Call the constructor of the base class (Animal)\par
+    \}\par
+\par
+    // Method to display the mammal's sound\par
+    void sound() \{\par
+        System.out.println(name + " makes a sound.");\par
+    \}\par
+\}\par
+\par
+// Further derived class (Dog) inherits from Mammal\par
+class Dog extends Mammal \{\par
+    // Constructor to initialize the dog's name\par
+    Dog(String name) \{\par
+        super(name); // Call the constructor of the Mammal class\par
+    \}\par
+\par
+    // Method to display the dog's behavior\par
+    void behavior() \{\par
+        System.out.println(name + " barks.");\par
+    \}\par
+\}\par
+\par
+public class Main \{\par
+    public static void main(String[] args) \{\par
+        // Create an instance of the Dog class\par
+        Dog dog = new Dog("Buddy");\par
+\par
+        // Call methods from Dog, Mammal, and Animal classes\par
+        dog.showName();  // Method from Animal class\par
+        dog.sound();     // Method from Mammal class\par
+        dog.behavior();  // Method from Dog class\par
+    \}\par
+\}\par
+\par
+\b\fs24 Q.14. Write a program to define a class Employee to accept emp_id, emp _name, basic_salary from the user and display the gross_salary.\par
+\b0\fs20 import java.util.Scanner;\par
+\par
+// Class to represent an Employee\par
+class Employee \{\par
+    // Instance variables\par
+    int emp_id;\par
+    String emp_name;\par
+    double basic_salary;\par
+\par
+    // Constructor to initialize employee details\par
+    Employee(int emp_id, String emp_name, double basic_salary) \{\par
+        this.emp_id = emp_id;\par
+        this.emp_name = emp_name;\par
+        this.basic_salary = basic_salary;\par
+    \}\par
+\par
+    // Method to calculate and return the gross salary\par
+    double calculateGrossSalary() \{\par
+        // Assuming allowance is 20% of the basic salary\par
+        double allowance = 0.2 * basic_salary;\par
+        return basic_salary + allowance; // Gross salary = basic salary + allowance\par
+    \}\par
+\par
+    // Method to display employee details along with the gross salary\par
+    void displayEmployeeDetails() \{\par
+        double grossSalary = calculateGrossSalary();\par
+        System.out.println("Employee ID: " + emp_id);\par
+        System.out.println("Employee Name: " + emp_name);\par
+        System.out.println("Basic Salary: " + basic_salary);\par
+        System.out.println("Gross Salary: " + grossSalary);\par
+    \}\par
+\}\par
+\par
+public class Main \{\par
+    public static void main(String[] args) \{\par
+        // Create a Scanner object for user input\par
+        Scanner scanner = new Scanner(System.in);\par
+\par
+        // Input employee details\par
+        System.out.print("Enter Employee ID: ");\par
+        int emp_id = scanner.nextInt();\par
+\par
+        scanner.nextLine(); // Consume the newline character left by nextInt()\par
+\par
+        System.out.print("Enter Employee Name: ");\par
+        String emp_name = scanner.nextLine();\par
+\par
+        System.out.print("Enter Basic Salary: ");\par
+        double basic_salary = scanner.nextDouble();\par
+\par
+        // Create an Employee object using the provided details\par
+        Employee employee = new Employee(emp_id, emp_name, basic_salary);\par
+\par
+        // Display employee details along with the gross salary\par
+        employee.displayEmployeeDetails();\par
+\par
+        // Close the scanner\par
+        scanner.close();\par
+    \}\par
+\}\par
+\par
+\b\fs24 Q.15. Write a program to demonstrate use of 'this' keyword.\par
+\b0\fs20 // Class to demonstrate 'this' keyword\par
+class Student \{\par
+    // Instance variables\par
+    String name;\par
+    int age;\par
+\par
+    // Constructor to initialize instance variables\par
+    Student(String name, int age) \{\par
+        // 'this' refers to the current object instance\par
+        this.name = name;  // Using 'this' to refer to the instance variable 'name'\par
+        this.age = age;    // Using 'this' to refer to the instance variable 'age'\par
+    \}\par
+\par
+    // Method to display student details\par
+    void displayStudentDetails() \{\par
+        System.out.println("Student Name: " + this.name);  // Using 'this' to refer to current object's name\par
+        System.out.println("Student Age: " + this.age);    // Using 'this' to refer to current object's age\par
+    \}\par
+\par
+    // Method to demonstrate constructor chaining using 'this'\par
+    Student(String name) \{\par
+        // Calling another constructor using 'this' keyword\par
+        this(name, 18);  // Calls the constructor with name and age as 18\par
+    \}\par
+\par
+    // Method to demonstrate calling another method using 'this'\par
+    void callAnotherMethod() \{\par
+        this.displayStudentDetails();  // Calling the display method of the current object\par
+    \}\par
+\}\par
+\par
+public class Main \{\par
+    public static void main(String[] args) \{\par
+        // Create an instance of Student using the parameterized constructor\par
+        Student student1 = new Student("John Doe", 20);\par
+        \par
+        // Display student details using 'this' keyword inside method\par
+        student1.displayStudentDetails();\par
+        \par
+        // Create another instance using constructor chaining\par
+        Student student2 = new Student("Jane Doe");\par
+        \par
+        // Display student details using 'this' keyword inside method\par
+        student2.displayStudentDetails();\par
+        \par
+        // Calling another method using 'this'\par
+        student1.callAnotherMethod();\par
+    \}\par
+\}\par
+\par
+\b\fs24 Q.16. Write a program to demonstrate use of 'static' keyword.\par
+\b0\fs20 // Class to demonstrate the use of static keyword\par
+class Employee \{\par
+    // Static variable - shared by all instances of the class\par
+    static int count = 0;\par
+    \par
+    // Instance variables\par
+    int emp_id;\par
+    String emp_name;\par
+    \par
+    // Constructor to initialize instance variables\par
+    Employee(int id, String name) \{\par
+        emp_id = id;\par
+        emp_name = name;\par
+        count++; // Increment static count variable whenever a new object is created\par
+    \}\par
+    \par
+    // Static method - can be called without creating an instance\par
+    static void showEmployeeCount() \{\par
+        System.out.println("Total Employees: " + count);\par
+    \}\par
+    \par
+    // Instance method\par
+    void showEmployeeDetails() \{\par
+        System.out.println("Employee ID: " + emp_id);\par
+        System.out.println("Employee Name: " + emp_name);\par
+    \}\par
+    \par
+    // Static block - executed when the class is loaded\par
+    static \{\par
+        System.out.println("Static Block Executed!");\par
+    \}\par
+\}\par
+\par
+public class Main \{\par
+    public static void main(String[] args) \{\par
+        // Create instances of Employee class\par
+        Employee emp1 = new Employee(101, "John");\par
+        Employee emp2 = new Employee(102, "Jane");\par
+\par
+        // Display details of each employee\par
+        emp1.showEmployeeDetails();\par
+        emp2.showEmployeeDetails();\par
+        \par
+        // Call static method to display total employee count\par
+        Employee.showEmployeeCount();\par
+\par
+        // Create another instance to observe the updated employee count\par
+        Employee emp3 = new Employee(103, "Alice");\par
+        emp3.showEmployeeDetails();\par
+        \par
+        // Call static method again to display updated employee count\par
+        Employee.showEmployeeCount();\par
+    \}\par
+\}\par
+\par
+\b\fs24 17. Write program, which finds the sum of numbers formed by consecutive digits.\par
+Input : 2415\par
+output : 24+41+15=80.\par
+\b0\fs20 import java.util.Scanner;\par
+\par
+public class ConsecutiveDigitSum \{\par
+    public static void main(String[] args) \{\par
+        // Create a scanner object for input\par
+        Scanner scanner = new Scanner(System.in);\par
+\par
+        // Input a number from the user\par
+        System.out.print("Enter a number: ");\par
+        String input = scanner.nextLine();\par
+\par
+        // Check if the input is valid (only digits)\par
+        if (!input.matches("\\\\d+")) \{\par
+            System.out.println("Invalid input! Please enter a valid number.");\par
+            return;\par
+        \}\par
+\par
+        // Initialize the sum\par
+        int sum = 0;\par
+        StringBuilder result = new StringBuilder();\par
+\par
+        // Loop to extract two consecutive digits and form numbers\par
+        for (int i = 0; i < input.length() - 1; i++) \{\par
+            // Form a two-digit number using consecutive digits\par
+            int num = Integer.parseInt(input.substring(i, i + 2));\par
+            \par
+            // Add the number to the sum\par
+            sum += num;\par
+\par
+            // Append the number to the result string in the required format\par
+            result.append(num);\par
+            \par
+            // If not the last number, add the "+" sign\par
+            if (i < input.length() - 2) \{\par
+                result.append("+");\par
+            \}\par
+        \}\par
+\par
+        // Output the result in the required format\par
+        System.out.println(result.toString() + "=" + sum);\par
+\par
+        // Close the scanner\par
+        scanner.close();\par
+    \}\par
+\}\par
+\par
+\b\fs24 Q.18. Create three interfaces, each with two methods. Inherit a new interface from the three, adding a new method. Create a class by implementing the new interface and also inheriting from a concrete class. Now write four methods, each of which takes one of the four interfaces as an argument. In main ( ), create an object of your class and pass it to each of the methods.\par
+\b0\fs20 // Interface 1 with two methods\par
+interface Interface1 \{\par
+    void method1();\par
+    void method2();\par
+\}\par
+\par
+// Interface 2 with two methods\par
+interface Interface2 \{\par
+    void method3();\par
+    void method4();\par
+\}\par
+\par
+// Interface 3 with two methods\par
+interface Interface3 \{\par
+    void method5();\par
+    void method6();\par
+\}\par
+\par
+// New Interface that inherits from Interface1, Interface2, and Interface3\par
+// and adds a new method\par
+interface CombinedInterface extends Interface1, Interface2, Interface3 \{\par
+    void method7();\par
+\}\par
+\par
+// Concrete class that implements the new interface and also inherits a concrete class\par
+class ConcreteClass \{\par
+    public void showMessage() \{\par
+        System.out.println("This is a concrete class message.");\par
+    \}\par
+\}\par
+\par
+class MyClass extends ConcreteClass implements CombinedInterface \{\par
+    \par
+    // Implementing all methods from the interfaces\par
+    public void method1() \{\par
+        System.out.println("Method 1 from Interface1");\par
+    \}\par
+\par
+    public void method2() \{\par
+        System.out.println("Method 2 from Interface1");\par
+    \}\par
+\par
+    public void method3() \{\par
+        System.out.println("Method 3 from Interface2");\par
+    \}\par
+\par
+    public void method4() \{\par
+        System.out.println("Method 4 from Interface2");\par
+    \}\par
+\par
+    public void method5() \{\par
+        System.out.println("Method 5 from Interface3");\par
+    \}\par
+\par
+    public void method6() \{\par
+        System.out.println("Method 6 from Interface3");\par
+    \}\par
+\par
+    public void method7() \{\par
+        System.out.println("Method 7 from CombinedInterface");\par
+    \}\par
+\}\par
+\par
+// Methods that take one of the interfaces as an argument\par
+public class Main \{\par
+    \par
+    // Method that accepts Interface1\par
+    public static void testInterface1(Interface1 obj) \{\par
+        obj.method1();\par
+        obj.method2();\par
+    \}\par
+\par
+    // Method that accepts Interface2\par
+    public static void testInterface2(Interface2 obj) \{\par
+        obj.method3();\par
+        obj.method4();\par
+    \}\par
+\par
+    // Method that accepts Interface3\par
+    public static void testInterface3(Interface3 obj) \{\par
+        obj.method5();\par
+        obj.method6();\par
+    \}\par
+\par
+    // Method that accepts CombinedInterface\par
+    public static void testCombinedInterface(CombinedInterface obj) \{\par
+        obj.method1();\par
+        obj.method2();\par
+        obj.method3();\par
+        obj.method4();\par
+        obj.method5();\par
+        obj.method6();\par
+        obj.method7();\par
+    \}\par
+\par
+    public static void main(String[] args) \{\par
+        // Create an object of MyClass\par
+        MyClass myObject = new MyClass();\par
+\par
+        // Pass the object to methods\par
+        System.out.println("Testing Interface1:");\par
+        testInterface1(myObject);\par
+\par
+        System.out.println("\\nTesting Interface2:");\par
+        testInterface2(myObject);\par
+\par
+        System.out.println("\\nTesting Interface3:");\par
+        testInterface3(myObject);\par
+\par
+        System.out.println("\\nTesting CombinedInterface:");\par
+        testCombinedInterface(myObject);\par
+\par
+        // Call method from ConcreteClass\par
+        myObject.showMessage();\par
+    \}\par
+\}\par
+\par
+\b\fs24 19. Write a Java program to show the use of all keywords for exception handling.\par
+\b0\fs20 public class ExceptionHandlingExample \{\par
+\par
+    // Method to demonstrate the use of 'throws' and 'throw'\par
+    public static void checkAge(int age) throws IllegalArgumentException \{\par
+        // Using 'throw' to throw an exception explicitly\par
+        if (age < 18) \{\par
+            throw new IllegalArgumentException("Age must be 18 or older.");\par
+        \}\par
+        System.out.println("Age is valid: " + age);\par
+    \}\par
+\par
+    // Method to demonstrate try-catch-finally\par
+    public static void divideNumbers(int numerator, int denominator) \{\par
+        try \{\par
+            // Trying to divide by zero, which can throw an ArithmeticException\par
+            int result = numerator / denominator;\par
+            System.out.println("Result: " + result);\par
+        \} catch (ArithmeticException e) \{\par
+            // Catching the ArithmeticException (e.g., divide by zero)\par
+            System.out.println("Error: Cannot divide by zero.");\par
+        \} finally \{\par
+            // The 'finally' block always runs, whether an exception occurs or not\par
+            System.out.println("This block always executes, regardless of exception.");\par
+        \}\par
+    \}\par
+\par
+    public static void main(String[] args) \{\par
+        // Testing the 'try-catch-finally' block\par
+        System.out.println("Testing try-catch-finally block:");\par
+        divideNumbers(10, 0);  // This will cause ArithmeticException (divide by zero)\par
+        System.out.println();\par
+\par
+        // Testing 'throw' and 'throws' with a custom exception\par
+        System.out.println("Testing 'throw' and 'throws':");\par
+        try \{\par
+            // Calling method that throws an exception\par
+            checkAge(15);  // This will throw IllegalArgumentException\par
+        \} catch (IllegalArgumentException e) \{\par
+            // Catching the thrown exception\par
+            System.out.println("Exception caught: " + e.getMessage());\par
+        \}\par
+        System.out.println();\par
+\par
+        // Testing a valid case where no exception is thrown\par
+        try \{\par
+            checkAge(20);  // This will not throw an exception\par
+        \} catch (IllegalArgumentException e) \{\par
+            System.out.println("Exception caught: " + e.getMessage());\par
+        \}\par
+\par
+        System.out.println("Program ended successfully.");\par
+    \}\par
+\}\par
+\par
+\b\fs24 Q.20. Write a Java program using try and catch to generate NegativeArrayIndex Exception and Arithmetic Exception.\par
+\b0\fs20 public class ExceptionExample \{\par
+\par
+    public static void main(String[] args) \{\par
+        // Handling NegativeArraySizeException\par
+        try \{\par
+            // Trying to create an array with negative size\par
+            int[] arr = new int[-5];  // This will throw NegativeArraySizeException\par
+            System.out.println("Array created with size: " + arr.length);\par
+        \} catch (NegativeArraySizeException e) \{\par
+            // Catching and handling NegativeArraySizeException\par
+            System.out.println("Caught NegativeArraySizeException: Cannot create an array with a negative size.");\par
+        \}\par
+\par
+        System.out.println();  // Just to separate the outputs\par
+\par
+        // Handling ArithmeticException\par
+        try \{\par
+            // Trying to perform division by zero\par
+            int result = 10 / 0;  // This will throw ArithmeticException\par
+            System.out.println("Result: " + result);\par
+        \} catch (ArithmeticException e) \{\par
+            // Catching and handling ArithmeticException\par
+            System.out.println("Caught ArithmeticException: Division by zero is not allowed.");\par
+        \}\par
+\par
+        System.out.println("Program execution continues after exception handling.");\par
+    \}\par
+\}\par
+\par
+\b\fs24 Q.21. Write a program that outputs the name of the capital of the country entered at the command line. The program should throw a \ldblquote NoMatchFoundException\rdblquote  when it fails to print the capital of the country entered at the command line.\par
+\b0\fs20 // Define custom exception class\par
+class NoMatchFoundException extends Exception \{\par
+    public NoMatchFoundException(String message) \{\par
+        super(message);\par
+    \}\par
+\}\par
+\par
+public class CountryCapital \{\par
+\par
+    // Method to get the capital of a country\par
+    public static String getCapital(String country) throws NoMatchFoundException \{\par
+        // Predefined list of countries and their capitals\par
+        switch (country.toLowerCase()) \{\par
+            case "usa":\par
+                return "Washington, D.C.";\par
+            case "india":\par
+                return "New Delhi";\par
+            case "france":\par
+                return "Paris";\par
+            case "japan":\par
+                return "Tokyo";\par
+            case "germany":\par
+                return "Berlin";\par
+            default:\par
+                throw new NoMatchFoundException("No capital found for the country: " + country);\par
+        \}\par
+    \}\par
+\par
+    public static void main(String[] args) \{\par
+        // Check if a country name is provided as a command-line argument\par
+        if (args.length != 1) \{\par
+            System.out.println("Please provide exactly one country name as input.");\par
+            return;\par
+        \}\par
+\par
+        String country = args[0];  // Get the country name from the command line argument\par
+\par
+        try \{\par
+            // Attempt to fetch the capital of the country\par
+            String capital = getCapital(country);\par
+            System.out.println("The capital of " + country + " is " + capital + ".");\par
+        \} catch (NoMatchFoundException e) \{\par
+            // Catch the NoMatchFoundException if the country is not found\par
+            System.out.println(e.getMessage());\par
+        \}\par
+    \}\par
+\}\par
+\par
+\b\fs24 Q.22. Write a java program to create an custom Exception that would handle at least 2 kind of Arithmetic Exceptions while calculating a given equation.\par
+\b0\fs20 // Custom Exception Class\par
+class ArithmeticCalculationException extends Exception \{\par
+    public ArithmeticCalculationException(String message) \{\par
+        super(message);\par
+    \}\par
+\}\par
+\par
+public class CustomExceptionExample \{\par
+\par
+    // Method that performs an arithmetic operation and throws custom exception\par
+    public static int calculate(int num1, int num2, String operation) throws ArithmeticCalculationException \{\par
+        try \{\par
+            switch (operation) \{\par
+                case "divide":\par
+                    if (num2 == 0) \{\par
+                        throw new ArithmeticException("Cannot divide by zero.");\par
+                    \}\par
+                    return num1 / num2;\par
+                case "multiply":\par
+                    return num1 * num2;\par
+                default:\par
+                    throw new ArithmeticException("Invalid operation.");\par
+            \}\par
+        \} catch (ArithmeticException e) \{\par
+            // Handle ArithmeticException and throw the custom exception with a message\par
+            throw new ArithmeticCalculationException("Arithmetic error occurred: " + e.getMessage());\par
+        \}\par
+    \}\par
+\par
+    public static void main(String[] args) \{\par
+        try \{\par
+            // Sample inputs for testing\par
+            int num1 = 10;\par
+            int num2 = 0;  // This will cause division by zero\par
+            String operation = "divide";\par
+\par
+            // Calling the calculate method\par
+            int result = calculate(num1, num2, operation);\par
+            System.out.println("Result: " + result);\par
+\par
+        \} catch (ArithmeticCalculationException e) \{\par
+            // Catching the custom exception and printing the message\par
+            System.out.println(e.getMessage());\par
+        \}\par
+\par
+        try \{\par
+            // Testing a valid operation\par
+            int num1 = 10;\par
+            int num2 = 5;\par
+            String operation = "multiply";\par
+\par
+            // Calling the calculate method\par
+            int result = calculate(num1, num2, operation);\par
+            System.out.println("Result: " + result);\par
+\par
+        \} catch (ArithmeticCalculationException e) \{\par
+            // Catching the custom exception and printing the message\par
+            System.out.println(e.getMessage());\par
+        \}\par
+\par
+        try \{\par
+            // Testing a NumberFormatException scenario\par
+            String invalidNumber = "ten";  // This will cause NumberFormatException\par
+            int num = Integer.parseInt(invalidNumber); // This line will throw NumberFormatException\par
+        \} catch (NumberFormatException e) \{\par
+            // Handling NumberFormatException separately\par
+            System.out.println("Error: Invalid number format. Please enter a valid integer.");\par
+        \}\par
+    \}\par
+\}\par
+\par
+\b\fs24 23. Create two user-defined exceptions named \ldblquote TooHot\rdblquote  and \ldblquote TooCold\rdblquote  to check the temperature (in Celsius) given by the user passed through the command line is too hot or \par
+too cold.If temperature > 35, throw exception \ldblquote TooHot\rdblquote .\par
+If temperature <5, throw exception \ldblquote TooCold\rdblquote .\par
+Otherwise, print \ldblquote Normal\rdblquote  and convert it to Farenheit.\par
+\b0\fs20 // Custom Exception: TooHot\par
+class TooHot extends Exception \{\par
+    public TooHot(String message) \{\par
+        super(message);\par
+    \}\par
+\}\par
+\par
+// Custom Exception: TooCold\par
+class TooCold extends Exception \{\par
+    public TooCold(String message) \{\par
+        super(message);\par
+    \}\par
+\}\par
+\par
+public class TemperatureChecker \{\par
+\par
+    // Method to check the temperature and convert it to Fahrenheit if normal\par
+    public static void checkTemperature(int temperature) throws TooHot, TooCold \{\par
+        if (temperature > 35) \{\par
+            throw new TooHot("Temperature is too hot: " + temperature + "\'b0C");\par
+        \} else if (temperature < 5) \{\par
+            throw new TooCold("Temperature is too cold: " + temperature + "\'b0C");\par
+        \} else \{\par
+            // If temperature is normal, print the message and convert to Fahrenheit\par
+            System.out.println("Normal temperature: " + temperature + "\'b0C");\par
+            double fahrenheit = (temperature * 9 / 5) + 32;\par
+            System.out.println("Converted to Fahrenheit: " + fahrenheit + "\'b0F");\par
+        \}\par
+    \}\par
+\par
+    public static void main(String[] args) \{\par
+        if (args.length != 1) \{\par
+            System.out.println("Please enter a valid temperature value in Celsius.");\par
+            return;\par
+        \}\par
+\par
+        try \{\par
+            // Parse the input temperature from the command line argument\par
+            int temperature = Integer.parseInt(args[0]);\par
+\par
+            // Check the temperature and handle exceptions\par
+            checkTemperature(temperature);\par
+\par
+        \} catch (TooHot e) \{\par
+            // Handle TooHot exception\par
+            System.out.println(e.getMessage());\par
+        \} catch (TooCold e) \{\par
+            // Handle TooCold exception\par
+            System.out.println(e.getMessage());\par
+        \} catch (NumberFormatException e) \{\par
+            // Handle invalid input (non-integer input)\par
+            System.out.println("Invalid input! Please enter a valid integer value for the temperature.");\par
+        \}\par
+    \}\par
+\}\par
+\par
+\b\fs24 Q.24. Consider an Employee recruitment system that prints the candidate name based on the age criteria. The name and age of the candidate are taken as Input.Create two user-defined exceptions named \ldblquote TooOlder\rdblquote  and \ldblquote TooYounger\rdblquote\par
+If age>45, throw exception \ldblquote TooOlder\rdblquote .\par
+If age<20, throw exception \ldblquote TooYounger\rdblquote .\par
+Otherwise, print \ldblquote Eligible\rdblquote  and print the name of the candidate.\par
+\b0\fs20 import java.util.Scanner;\par
+\par
+// Custom Exception: TooOlder\par
+class TooOlder extends Exception \{\par
+    public TooOlder(String message) \{\par
+        super(message);\par
+    \}\par
+\}\par
+\par
+// Custom Exception: TooYounger\par
+class TooYounger extends Exception \{\par
+    public TooYounger(String message) \{\par
+        super(message);\par
+    \}\par
+\}\par
+\par
+public class EmployeeRecruitment \{\par
+\par
+    // Method to check eligibility based on age\par
+    public static void checkEligibility(String name, int age) throws TooOlder, TooYounger \{\par
+        if (age > 45) \{\par
+            throw new TooOlder("Candidate is too old: " + age + " years.");\par
+        \} else if (age < 20) \{\par
+            throw new TooYounger("Candidate is too young: " + age + " years.");\par
+        \} else \{\par
+            // If the candidate's age is between 20 and 45, they are eligible\par
+            System.out.println("Eligible");\par
+            System.out.println("Candidate Name: " + name);\par
+        \}\par
+    \}\par
+\par
+    public static void main(String[] args) \{\par
+        Scanner scanner = new Scanner(System.in);\par
+\par
+        // Take candidate name and age as input\par
+        System.out.print("Enter candidate name: ");\par
+        String name = scanner.nextLine();\par
+\par
+        System.out.print("Enter candidate age: ");\par
+        int age = scanner.nextInt();\par
+\par
+        try \{\par
+            // Check eligibility\par
+            checkEligibility(name, age);\par
+        \} catch (TooOlder e) \{\par
+            // Handle TooOlder exception\par
+            System.out.println(e.getMessage());\par
+        \} catch (TooYounger e) \{\par
+            // Handle TooYounger exception\par
+            System.out.println(e.getMessage());\par
+        \} finally \{\par
+            scanner.close();\par
+        \}\par
+    \}\par
+\}\par
+\par
+\b\fs24 Q.25. Write a program to raise a user defined exception if username is less than 6 characters and password does not match.\par
+\b0\fs20 import java.util.Scanner;\par
+\par
+// Custom Exception: InvalidCredentialsException\par
+class InvalidCredentialsException extends Exception \{\par
+    public InvalidCredentialsException(String message) \{\par
+        super(message);\par
+    \}\par
+\}\par
+\par
+public class UserAuthentication \{\par
+\par
+    // Method to validate username and password\par
+    public static void validateCredentials(String username, String password) throws InvalidCredentialsException \{\par
+        // Check if username is less than 6 characters\par
+        if (username.length() < 6) \{\par
+            throw new InvalidCredentialsException("Username must be at least 6 characters.");\par
+        \}\par
+        \par
+        // Check if password is "admin123" (for demonstration purposes)\par
+        String correctPassword = "admin123";\par
+        if (!password.equals(correctPassword)) \{\par
+            throw new InvalidCredentialsException("Password does not match.");\par
+        \}\par
+        \par
+        // If both checks pass\par
+        System.out.println("Credentials are valid.");\par
+    \}\par
+\par
+    public static void main(String[] args) \{\par
+        Scanner scanner = new Scanner(System.in);\par
+\par
+        // Prompt user for username and password\par
+        System.out.print("Enter username: ");\par
+        String username = scanner.nextLine();\par
+\par
+        System.out.print("Enter password: ");\par
+        String password = scanner.nextLine();\par
+\par
+        try \{\par
+            // Validate credentials\par
+            validateCredentials(username, password);\par
+        \} catch (InvalidCredentialsException e) \{\par
+            // Handle InvalidCredentialsException\par
+            System.out.println(e.getMessage());\par
+        \} finally \{\par
+            scanner.close();\par
+        \}\par
+    \}\par
+\}\par
+\par
+\b\fs24 Q.26. Write a program to input name and age of a person and throw a user-defined exception, if the entered age is negative.\par
+\b0\fs20 import java.util.Scanner;\par
+\par
+// Custom Exception: NegativeAgeException\par
+class NegativeAgeException extends Exception \{\par
+    public NegativeAgeException(String message) \{\par
+        super(message);  // Passing message to the Exception class constructor\par
+    \}\par
+\}\par
+\par
+public class PersonAge \{\par
+\par
+    // Method to validate the age\par
+    public static void validateAge(int age) throws NegativeAgeException \{\par
+        if (age < 0) \{\par
+            throw new NegativeAgeException("Age cannot be negative.");  // Throwing custom exception\par
+        \} else \{\par
+            System.out.println("Person's name: " + name);\par
+            System.out.println("Person's age: " + age);\par
+        \}\par
+    \}\par
+\par
+    public static void main(String[] args) \{\par
+        Scanner scanner = new Scanner(System.in);\par
+\par
+        // Prompt user for name and age\par
+        System.out.print("Enter name: ");\par
+        String name = scanner.nextLine();  // Input name\par
+\par
+        System.out.print("Enter age: ");\par
+        int age = scanner.nextInt();  // Input age\par
+\par
+        try \{\par
+            // Call validateAge method to check if the age is valid\par
+            validateAge(age);\par
+        \} catch (NegativeAgeException e) \{\par
+            // Catch the NegativeAgeException and display the message\par
+            System.out.println(e.getMessage());\par
+        \} finally \{\par
+            scanner.close();  // Close the scanner to prevent memory leaks\par
+        \}\par
+    \}\par
+\}\par
+\par
+\b\fs24\par
+\par
+\par
+\fs32\par
+
+\pard\sa200\sl276\slmult1\qc\b0\f1\fs22\par
+}
+ 
